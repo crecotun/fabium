@@ -1,0 +1,24 @@
+{
+  "name": "abtronic",
+  "version": "1.0.0",
+  "description": "abtronic",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:Krekotun/abtronic.git"
+  },
+  "author": "Krekotun",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-plumber": "^0.6.5",
+    "gulp-coffee": "^2.2.0",
+    "gulp-util": "^3.0.1",
+    "gulp": "^3.8.8",
+    "gulp-stylus": "^1.3.3",
+    "gulp-autoprefixer": "^1.0.0",
+    "gulp.spritesmith": "^1.3.0"
+  }
+}
