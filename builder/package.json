@@ -1,5 +1,5 @@
 {
-  "name": "abtronic",
+  "name": "feb",
   "version": "1.0.0",
   "description": "abtronic",
   "main": "gulpfile.js",
@@ -13,12 +13,12 @@
   "author": "Krekotun",
   "license": "ISC",
   "dependencies": {
-    "gulp-plumber": "^0.6.5",
-    "gulp-coffee": "^2.2.0",
-    "gulp-util": "^3.0.1",
-    "gulp": "^3.8.8",
-    "gulp-stylus": "^1.3.3",
-    "gulp-autoprefixer": "^1.0.0",
-    "gulp.spritesmith": "^1.3.0"
+    "gulp-plumber": "*",
+    "gulp-coffee": "*",
+    "gulp-util": "*",
+    "gulp": "*",
+    "gulp-stylus": "*",
+    "gulp-autoprefixer": "*",
+    "gulp.spritesmith": "*"
   }
 }
