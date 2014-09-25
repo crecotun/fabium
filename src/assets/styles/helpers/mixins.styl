@@ -1,0 +1,74 @@
+// useful
+radius()
+    -webkit-border-radius arguments
+    -moz-border-radius arguments
+    border-radius arguments
+
+shadow()
+    -webkit-box-shadow arguments
+    -moz-box-shadow arguments
+    box-shadow arguments
+
+borderbox()
+    -moz-box-sizing border-box
+    -webkit-box-sizing border-box
+    box-sizing border-box
+
+cut-text()
+    overflow hidden
+    white-space nowrap
+    -ms-text-overflow ellipsis
+    text-overflow ellipsis
+
+clearfix()
+    &:after
+        content ""
+        display table
+        clear both
+
+ibreset()
+    border 0
+    padding 0
+    margin 0
+    outline none
+    background none
+
+t-translate()
+    -ms-transform translate(arguments[0], arguments[1])
+    -webkit-transform translate(arguments[0], arguments[1])
+    transform translate(arguments[0], arguments[1])
+
+transition()
+    -webkit-transition arguments
+    -moz-transition arguments
+    -ms-transition arguments
+    -o-transition arguments
+    transition arguments
+
+user-select()
+    -webkit-user-select arguments
+    -moz-user-select arguments
+    user-select arguments
+
+spriteWidth($sprite) {
+    width: $sprite[4];
+}
+
+spriteHeight($sprite) {
+    height: $sprite[5];
+}
+
+spritePosition($sprite) {
+    background-position: $sprite[2] $sprite[3];
+}
+
+spriteImage($sprite) {
+    background-image: url(../images/$sprite[8]);
+}
+
+sprite($sprite) {
+    spriteImage($sprite)
+    spritePosition($sprite)
+    spriteWidth($sprite)
+    spriteHeight($sprite)
+}

@@ -56,12 +56,17 @@ gulp.task 'sprite', ->
 
 # Компиляция coffee в js
 gulp.task 'coffee', ->
-    gulp.src paths.src.scripts
+    gulp.src paths.src.scripts.local
         .pipe plumber({
             errorHandler: consoleErorr
         })
         .pipe coffee({bare: true})
-        .pipe gulp.dest paths.built.scripts
+        .pipe gulp.dest paths.built.scripts.local
+
+# перенос скриптов из папки вендор в built
+gulp.task 'vendor', ->
+    gulp.src paths.src.scripts.vendor
+        .pipe gulp.dest paths.built.scripts.vendor
 
 # Компиляция stylus в css
 gulp.task 'stylus', ->
@@ -97,7 +102,7 @@ gulp.task 'watch', ->
     return
 
 # Выполнение всех тасков на продакшене или для продакшена
-gulp.task 'default', ['coffee', 'vendor', 'sprite', 'stylus:prod' 'images']
+gulp.task 'default', ['coffee', 'vendor', 'sprite', 'stylus:prod', 'images']
 
 # Dev таск для разработки с отслеживанием измнений файлов и компиляцией их на лету
 gulp.task 'dev', ['coffee', 'vendor', 'sprite', 'stylus', 'images', 'watch']
