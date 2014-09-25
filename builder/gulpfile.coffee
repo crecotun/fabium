@@ -4,7 +4,6 @@ plumber = require 'gulp-plumber'
 stylus = require 'gulp-stylus'
 coffee = require 'gulp-coffee'
 spritesmith = require 'gulp.spritesmith'
-prefix = require 'gulp-autoprefixer'
 
 # Пути к файлам/папкам
 paths =
@@ -77,16 +76,6 @@ gulp.task 'stylus', ->
         .pipe stylus()
         .pipe gulp.dest paths.built.styles
 
-# Компиляция stylus в css и добавление префиксов к свойствам
-gulp.task 'stylus', ->
-    gulp.src paths.src.style
-        .pipe plumber({
-            errorHandler: consoleErorr
-        })
-        .pipe stylus()
-        .pipe prefix({cascade: true})
-        .pipe gulp.dest paths.built.styles
-
 # Копирования картинок из src в built
 gulp.task 'images', ->
     gulp.src paths.src.images
@@ -102,7 +91,7 @@ gulp.task 'watch', ->
     return
 
 # Выполнение всех тасков на продакшене или для продакшена
-gulp.task 'default', ['coffee', 'vendor', 'sprite', 'stylus:prod', 'images']
+gulp.task 'default', ['coffee', 'vendor', 'sprite', 'stylus', 'images']
 
 # Dev таск для разработки с отслеживанием измнений файлов и компиляцией их на лету
 gulp.task 'dev', ['coffee', 'vendor', 'sprite', 'stylus', 'images', 'watch']
