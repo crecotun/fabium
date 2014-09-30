@@ -4,20 +4,33 @@ plumber = require 'gulp-plumber'
 stylus = require 'gulp-stylus'
 coffee = require 'gulp-coffee'
 spritesmith = require 'gulp.spritesmith'
+jade = require 'gulp-jade'
 
 # Пути к файлам/папкам
 paths =
     src :
-        style: "../src/assets/styles/main.styl"
-        styl : "../src/assets/styles/**/*.styl"
+        path: "../src/"
+        styles:
+            main: "../src/assets/styles/main.styl"
+            watch : "../src/assets/styles/**/*.styl"
+
+        sprites:
+            images: "../src/assets/images/sprite/*"
+            style: "../src/assets/styles/common/"
+
         scripts:
             local: "../src/assets/scripts/**/*.coffee"
             vendor: "../src/assets/scripts/vendor/**/*.js"
+
         images: "../src/assets/images/**/*.*"
-        sprites: '../src/assets/images/sprite/*'
-        sprite: '../src/assets/styles/common/'
+
+        templates:
+            path: '../src/templates/**/*.jade'
+            blocks: '../src/templates/blocks/**/*.jade'
+            pages: '../src/templates/pages/**/*.jade'
 
     built :
+        path: "../built/"
         styles: "../built/assets/styles"
         scripts: 
             local: "../built/assets/scripts"
@@ -37,8 +50,8 @@ consoleErorr = (err) ->
 
 # Генерация спрайтов
 gulp.task 'sprite', ->
-    spriteData = gulp.src paths.src.sprites
-        .pipe spritesmith({
+    spriteData = gulp.src paths.src.sprites.images
+        .pipe spritesmith
             imgName: 'sprite.png'
             cssName: 'sprite.styl'
             padding: 2
@@ -48,18 +61,19 @@ gulp.task 'sprite', ->
             cssVarMap: (sprite) ->
                 sprite.name = 's-' + sprite.name
                 return
-        })
 
     spriteData.img.pipe(gulp.dest(paths.built.images)); # путь, куда сохраняем картинку
-    spriteData.css.pipe(gulp.dest(paths.src.sprite)); # путь, куда сохраняем стили
+    spriteData.css.pipe(gulp.dest(paths.src.sprites.style)); # путь, куда сохраняем стили
+
+    return
 
 # Компиляция coffee в js
 gulp.task 'coffee', ->
     gulp.src paths.src.scripts.local
-        .pipe plumber({
+        .pipe plumber
             errorHandler: consoleErorr
-        })
-        .pipe coffee({bare: true})
+        .pipe coffee
+            bare: true
         .pipe gulp.dest paths.built.scripts.local
 
 # перенос скриптов из папки вендор в built
@@ -69,10 +83,9 @@ gulp.task 'vendor', ->
 
 # Компиляция stylus в css
 gulp.task 'stylus', ->
-    gulp.src paths.src.style
-        .pipe plumber({
+    gulp.src paths.src.styles.main
+        .pipe plumber
             errorHandler: consoleErorr
-        })
         .pipe stylus()
         .pipe gulp.dest paths.built.styles
 
@@ -81,17 +94,30 @@ gulp.task 'images', ->
     gulp.src paths.src.images
         .pipe gulp.dest paths.built.images
 
+
+# Генерирование jade шаблонов
+# Генерируется только папка pages
+gulp.task 'jade', ->
+    gulp.src paths.src.templates.pages
+        .pipe plumber
+            errorHandler: consoleErorr
+        .pipe jade
+            pretty: true
+        .pipe gulp.dest paths.built.path
+
+# Отслеживанием изменение файлов
 gulp.task 'watch', ->
     gulp.watch paths.src.scripts.local, ['coffee']
     gulp.watch paths.src.scripts.vendor, ['vendor']
-    gulp.watch paths.src.styl, ['stylus']
+    gulp.watch paths.src.styles.watch, ['stylus']
     gulp.watch paths.src.images, ['images']
-    gulp.watch paths.src.sprites, ['sprite']
+    gulp.watch paths.src.sprites.images, ['sprite']
+    gulp.watch paths.src.templates.path, ['jade']
 
     return
 
 # Выполнение всех тасков на продакшене или для продакшена
-gulp.task 'default', ['coffee', 'vendor', 'sprite', 'stylus', 'images']
+gulp.task 'default', ['coffee', 'vendor', 'sprite', 'stylus', 'images', 'jade']
 
 # Dev таск для разработки с отслеживанием измнений файлов и компиляцией их на лету
-gulp.task 'dev', ['coffee', 'vendor', 'sprite', 'stylus', 'images', 'watch']
+gulp.task 'dev', ['coffee', 'vendor', 'sprite', 'stylus', 'images', 'jade', 'watch']
