@@ -1,12 +1,15 @@
 doctype html
 html
     head
-        title Привет
+        meta(charset='UTF-8')
+        title Главная страница
+        link(href='assets/styles/main.css', rel='stylesheet' type='text/css')
 
     body
-        include ../blocks/header
 
-        .lol
-            ul
-                li sdvfsdv
-                li sdvdsdsv
+        include ../blocks/header
+        include ../blocks/nav
+
+
+        script(src='assets/scripts/vendor/jquery-2.1.1.min.js')
+        script(src='assets/scripts/local/main.js')
