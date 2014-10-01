@@ -1,24 +1,38 @@
 {
-  "name": "feb",
-  "version": "1.0.0",
-  "description": "abtronic",
+  "name": "frobium",
+  "version": "0.0.1",
+  "description": "front-end boilerplate for fast project start",
   "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-coffee": "*",
+    "gulp-cssmin": "*",
+    "gulp-imagemin": "*",
+    "gulp-jade": "*",
+    "gulp-plumber": "*",
+    "gulp-stylus": "*",
+    "gulp-uglify": "*",
+    "gulp-util": "*",
+    "gulp.spritesmith": "*"
+    },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:Krekotun/abtronic.git"
+    "url": "https://github.com/Krekotun/frobium.git"
   },
+  "keywords": [
+    "front-end",
+    "gulp",
+    "boilerplate"
+  ],
   "author": "Krekotun",
   "license": "ISC",
-  "dependencies": {
-    "gulp-plumber": "*",
-    "gulp-coffee": "*",
-    "gulp-util": "*",
-    "gulp": "*",
-    "gulp-stylus": "*",
-    "gulp.spritesmith": "*",
-    "gulp-jade": "^0.8.0"
-  }
+  "bugs": {
+    "url": "https://github.com/Krekotun/frobium/issues"
+  },
+  "homepage": "https://github.com/Krekotun/frobium"
 }

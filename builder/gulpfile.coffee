@@ -5,6 +5,7 @@ stylus = require 'gulp-stylus'
 coffee = require 'gulp-coffee'
 spritesmith = require 'gulp.spritesmith'
 jade = require 'gulp-jade'
+imagemin = require 'gulp-imagemin'
 
 # Пути к файлам/папкам
 paths =
@@ -94,6 +95,11 @@ gulp.task 'images', ->
     gulp.src paths.src.images
         .pipe gulp.dest paths.built.images
 
+# Оптимизация картинок
+gulp.task 'images:min', ->
+    gulp.src paths.built.images
+        .pipe gulp.dest paths.built.images
+
 
 # Генерирование jade шаблонов
 # Генерируется только папка pages
@@ -104,6 +110,15 @@ gulp.task 'jade', ->
         .pipe jade
             pretty: true
         .pipe gulp.dest paths.built.path
+
+# Генерация сжатого html
+gulp.task 'jade:min', ->
+    gulp.src paths.src.templates.pages
+        .pipe plumber
+            errorHandler: consoleErorr
+        .pipe jade()
+        .pipe gulp.dest paths.built.path
+
 
 # Отслеживанием изменение файлов
 gulp.task 'watch', ->
@@ -118,6 +133,9 @@ gulp.task 'watch', ->
 
 # Выполнение всех тасков на продакшене или для продакшена
 gulp.task 'default', ['coffee', 'vendor', 'sprite', 'stylus', 'images', 'jade']
+
+# Таски для выкатывания на продакшн. Генерация всех стилей, скриптов, картинок и последующая оптимизация
+gulp.task 'prod', ['coffee', 'vendor', 'sprite', 'stylus', 'images', 'jade:min', 'css:min', 'js:min', 'images:min']
 
 # Dev таск для разработки с отслеживанием измнений файлов и компиляцией их на лету
 gulp.task 'dev', ['coffee', 'vendor', 'sprite', 'stylus', 'images', 'jade', 'watch']
