@@ -8,7 +8,9 @@ paths:
       path: "../src/assets/styles"
 
     sprites:
-      images: "../src/assets/images/sprite/*"
+      images: 
+        all: "../src/assets/images/sprite/*"
+        path: "../src/assets/images/sprite/"
       style: "../src/assets/styles/common/"
 
     scripts:

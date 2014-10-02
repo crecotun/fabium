@@ -31,7 +31,7 @@ consoleErorr = (err) ->
 
 # Генерация спрайтов
 gulp.task 'sprite', ->
-    spriteData = gulp.src config.paths.src.sprites.images
+    spriteData = gulp.src config.paths.src.sprites.images.all
         .pipe spritesmith
             imgName: 'sprite.png'
             cssName: 'sprite.styl'
@@ -74,9 +74,8 @@ gulp.task 'stylus', ->
 
 # Копирования картинок из src в built
 gulp.task 'images', ->
-    gulp.src config.paths.src.images.all
+    gulp.src [config.paths.src.images.all, '!'+config.paths.src.sprites.images.all]
         .pipe gulp.dest config.paths.built.images.path
-
 
 # Генерирование jade шаблонов
 # Генерируется только папка pages
@@ -128,7 +127,7 @@ gulp.task 'watch', ->
     gulp.watch config.paths.src.scripts.vendor.all, ['vendor']
     gulp.watch config.paths.src.styles.all, ['stylus']
     gulp.watch config.paths.src.images.all, ['images']
-    gulp.watch config.paths.src.sprites.images, ['sprite']
+    gulp.watch config.paths.src.sprites.images.all, ['sprite']
     gulp.watch config.paths.src.templates.all, ['jade']
 
     return
