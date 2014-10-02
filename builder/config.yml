@@ -1,0 +1,48 @@
+paths:
+  src:
+    path: "../src/"
+
+    styles:
+      all : "../src/assets/styles/**/*.styl"
+      main: "../src/assets/styles/main.styl"
+      path: "../src/assets/styles"
+
+    sprites:
+      images: "../src/assets/images/sprite/*"
+      style: "../src/assets/styles/common/"
+
+    scripts:
+      local:
+        all: "../src/assets/scripts/local/**/*.coffee"
+      vendor:
+        all: "../src/assets/scripts/vendor/**/*.js"
+
+    images: 
+      all: "../src/assets/images/**/*.*"
+      path: "../src/assets/images"
+
+    templates:
+      all: '../src/templates/**/*.jade'
+      path: '../src/templates'
+      blocks: 
+        all: '../src/templates/blocks/**/*.jade'
+        path: '../src/templates/blocks'
+      pages: 
+        all: '../src/templates/pages/**/*.jade'
+        path: '../src/templates/pages'
+
+  built:
+    path: "../built/"
+
+    styles: 
+      path: "../built/assets/styles"
+
+    scripts: 
+      local:
+        path: "../built/assets/scripts"
+      vendor:
+        path: "../built/assets/scripts/vendor/"
+
+    images: 
+      all: "../built/assets/images/**/*.*"
+      path: "../built/assets/images"

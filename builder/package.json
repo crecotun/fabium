@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "description": "front-end boilerplate for fast project start",
   "main": "gulpfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "imagemin-pngcrush": "^1.0.0",
+    "js-yaml": "^3.2.2"
+  },
   "devDependencies": {
     "gulp": "*",
     "gulp-autoprefixer": "*",
@@ -16,7 +19,7 @@
     "gulp-uglify": "*",
     "gulp-util": "*",
     "gulp.spritesmith": "*"
-    },
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
