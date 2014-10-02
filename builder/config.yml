@@ -34,12 +34,15 @@ paths:
   built:
     path: "../built/"
 
-    styles: 
+    styles:
+      all: "../built/assets/styles/**/*.css"
       path: "../built/assets/styles"
 
-    scripts: 
+    scripts:
+      all: "../built/assets/scripts/**/*.js"
+      path: "../built/assets/scripts/"
       local:
-        path: "../built/assets/scripts"
+        path: "../built/assets/scripts/local"
       vendor:
         path: "../built/assets/scripts/vendor/"
 

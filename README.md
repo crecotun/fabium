@@ -44,3 +44,6 @@ Cборщик проекта — `gulp`. До этого я имел опыт р
 * оптимизация картинок
 * base64 для маленьких иконок?
 * JSHint + автоматическое исправление js кода (https://github.com/kirjs/gulp-fixmyjs)
+* подключить http://jamjs.org/
+* https://github.com/jackfranklin/gulp-load-plugins
+* https://github.com/sindresorhus/gulp-changed

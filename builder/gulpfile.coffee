@@ -12,7 +12,7 @@ spritesmith = require 'gulp.spritesmith'
 jade = require 'gulp-jade'
 imagemin = require 'gulp-imagemin'
 pngcrush = require 'imagemin-pngcrush'
-cssmin = require 'gulp-cssmin'
+minifyCSS = require 'gulp-minify-css'
 uglify = require 'gulp-uglify'
 
 #load config.yml file
@@ -62,6 +62,8 @@ gulp.task 'vendor', ->
     gulp.src config.paths.src.scripts.vendor.all
         .pipe gulp.dest config.paths.built.scripts.vendor.path
 
+gulp.task 'scripts', ['coffee', 'vendor']
+
 # Компиляция stylus в css
 gulp.task 'stylus', ->
     gulp.src config.paths.src.styles.main
@@ -75,19 +77,6 @@ gulp.task 'images', ->
     gulp.src config.paths.src.images.all
         .pipe gulp.dest config.paths.built.images.path
 
-# Оптимизация картинок
-gulp.task 'images:min', ->
-    gulp.src config.paths.built.images.all
-        .pipe imagemin
-            progressive: true
-            svgoPlugins: [
-                removeViewBox: false
-            ]
-            use: [
-                pngcrush()
-            ]
-        .pipe gulp.dest config.paths.built.images.path
-
 
 # Генерирование jade шаблонов
 # Генерируется только папка pages
@@ -99,13 +88,38 @@ gulp.task 'jade', ->
             pretty: true
         .pipe gulp.dest config.paths.built.path
 
-# Генерация сжатого html
-gulp.task 'jade:min', ->
-    gulp.src config.paths.src.templates.pages.all
+
+##### Такси оптимизации
+
+# Оптимизация скриптов
+gulp.task 'scripts:min', ->
+    gulp.src config.paths.built.scripts.all
         .pipe plumber
             errorHandler: consoleErorr
-        .pipe jade()
-        .pipe gulp.dest config.paths.built.path
+        .pipe uglify()
+        .pipe gulp.dest config.paths.built.scripts.path
+
+# Оптимизация картинок
+gulp.task 'images:min', ->
+    gulp.src config.paths.built.images.all
+        .pipe plumber
+            errorHandler: consoleErorr
+        .pipe imagemin
+            progressive: true
+            svgoPlugins: [
+                removeViewBox: false
+            ]
+            use: [
+                pngcrush()
+            ]
+        .pipe gulp.dest config.paths.built.images.path
+
+gulp.task 'styles:min', ->
+    gulp.src config.paths.built.styles.all
+        .pipe plumber
+            errorHandler: consoleErorr
+        .pipe minifyCSS()
+        .pipe gulp.dest config.paths.built.styles.path
 
 
 # Отслеживанием изменение файлов
@@ -120,10 +134,17 @@ gulp.task 'watch', ->
     return
 
 # Выполнение всех тасков на продакшене или для продакшена
-gulp.task 'default', ['coffee', 'vendor', 'sprite', 'stylus', 'images', 'jade']
+gulp.task 'default', ['sprite', 'stylus', 'scripts', 'images', 'jade']
+
 
 # Таски для выкатывания на продакшн. Генерация всех стилей, скриптов, картинок и последующая оптимизация
-gulp.task 'prod', ['coffee', 'vendor', 'sprite', 'stylus', 'images:prod']
+
+# минимизация
+gulp.task 'minify', ['scripts:min', 'styles:min', 'images:min']
+
+# Не получилось добиться синхронности известными способами, пришлось прибегнуть к gulp.run
+gulp.task 'prod', ['default'], ->
+    gulp.run 'minify'
 
 # Dev таск для разработки с отслеживанием измнений файлов и компиляцией их на лету
-gulp.task 'dev', ['coffee', 'vendor', 'sprite', 'stylus', 'images', 'jade', 'watch']
+gulp.task 'dev', ['default', 'watch']
