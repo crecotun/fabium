@@ -10,8 +10,8 @@ paths:
     sprites:
       images: 
         all: "../src/assets/images/sprite/*"
-        path: "../src/assets/images/sprite/"
-      style: "../src/assets/styles/common/"
+        path: "../src/assets/images/sprite"
+      style: "../src/assets/styles/common"
 
     scripts:
       local:
@@ -24,14 +24,14 @@ paths:
       path: "../src/assets/images"
 
     templates:
-      all: '../src/templates/**/*.jade'
-      path: '../src/templates'
+      all: "../src/templates/**/*.jade"
+      path: "../src/templates"
       blocks: 
-        all: '../src/templates/blocks/**/*.jade'
-        path: '../src/templates/blocks'
+        all: "../src/templates/blocks/**/*.jade"
+        path: "../src/templates/blocks"
       pages: 
-        all: '../src/templates/pages/**/*.jade'
-        path: '../src/templates/pages'
+        all: "../src/templates/pages/**/*.jade"
+        path: "../src/templates/pages"
 
   built:
     path: "../built/"
@@ -46,7 +46,7 @@ paths:
       local:
         path: "../built/assets/scripts/local"
       vendor:
-        path: "../built/assets/scripts/vendor/"
+        path: "../built/assets/scripts/vendor"
 
     images: 
       all: "../built/assets/images/**/*.*"
