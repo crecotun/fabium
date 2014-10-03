@@ -149,6 +149,9 @@ gulp.task 'watch', ->
 ##### Таски по группам
 ##################################################################################
 
+# Выполнение всех тасков
+gulp.task 'default', ['sprite', 'stylus', 'scripts', 'images', 'jade']
+
 # Dev таск для разработки с отслеживанием измнений файлов и компиляцией их на лету
 gulp.task 'dev', ['default', 'watch']
 
@@ -159,6 +162,3 @@ gulp.task 'minify', ['scripts:min', 'styles:min', 'images:min']
 # TODO: Реализовать нормальную синхронность выполнения. Сейчас синхронность реализуется с устаревшим gulp.run
 gulp.task 'prod', ['default'], ->
     gulp.run 'minify'
-
-# Выполнение всех тасков
-gulp.task 'default', ['sprite', 'stylus', 'scripts', 'images', 'jade']
