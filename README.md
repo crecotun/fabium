@@ -73,3 +73,4 @@
 * подключить http://jamjs.org/
 * https://github.com/jackfranklin/gulp-load-plugins
 * https://github.com/sindresorhus/gulp-changed
+* https://www.npmjs.org/package/gulp-accord
