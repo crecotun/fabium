@@ -10,9 +10,7 @@
     "js-yaml": "^3.2.2",
     "gulp-imagemin": "*",
     "gulp-minify-css": "^0.3.10",
-    "gulp-uglify": "*",
-    "stylus": "^0.49.1",
-    "accord": "^0.12.0"
+    "gulp-uglify": "*"
   },
   "devDependencies": {
     "gulp-coffee": "*",
