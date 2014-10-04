@@ -6,7 +6,6 @@
 fs = require 'fs'
 yaml = require 'js-yaml'
 
-
 # gulp modules
 gulp = require 'gulp'
 gutil = require 'gulp-util'
