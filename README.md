@@ -74,3 +74,4 @@
 * https://github.com/jackfranklin/gulp-load-plugins
 * https://github.com/sindresorhus/gulp-changed
 * https://www.npmjs.org/package/gulp-accord
+* https://www.npmjs.org/package/gulp-task-listing / https://www.npmjs.org/package/gulp-help

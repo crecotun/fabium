@@ -30,7 +30,7 @@ config = yaml.load(fs.readFileSync("config.yml", "utf8"))
 # Если случается ошибка при работе галпа, воспроизводтся звук
 consoleErorr = (err) ->
     gutil.beep()
-    console.log(err)
+    console.log err.message
 
     return
 
