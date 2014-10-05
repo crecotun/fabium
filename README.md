@@ -65,9 +65,7 @@
 
 ## TODO
 * Подключить миксины для stylus (http://kouto-swiss.io/, nib)
-* minify css и js
-* генерация jade шаблонов
-* оптимизация картинок
+* конкатенация js
 * base64 для маленьких иконок?
 * JSHint + автоматическое исправление js кода (https://github.com/kirjs/gulp-fixmyjs)
 * подключить http://jamjs.org/
