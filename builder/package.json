@@ -10,7 +10,8 @@
     "js-yaml": "^3.2.2",
     "gulp-imagemin": "*",
     "gulp-minify-css": "^0.3.10",
-    "gulp-uglify": "*"
+    "gulp-uglify": "*",
+    "gulp-autoprefixer": "^1.0.1"
   },
   "devDependencies": {
     "gulp-coffee": "*",
@@ -20,7 +21,7 @@
     "gulp.spritesmith": "*"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp"
   },
   "repository": {
     "type": "git",
