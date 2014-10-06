@@ -18,6 +18,7 @@ imagemin = require 'gulp-imagemin'
 pngcrush = require 'imagemin-pngcrush'
 minifyCSS = require 'gulp-minify-css'
 uglify = require 'gulp-uglify'
+autoprefixer = require 'gulp-autoprefixer'
 
 # config.yml file
 config = yaml.load(fs.readFileSync("config.yml", "utf8"))
@@ -97,6 +98,12 @@ gulp.task 'jade', ->
             pretty: true
         .pipe gulp.dest config.paths.built.path
 
+# Добавление вендорных префиксов
+gulp.task 'autoprefixer', ->
+    gulp.src config.paths.built.styles.all
+        .pipe autoprefixer()
+        .pipe gulp.dest config.paths.built.styles.path
+
 
 ##################################################################################
 ##### Такси оптимизации
@@ -160,5 +167,5 @@ gulp.task 'minify', ['scripts:min', 'styles:min', 'images:min']
 
 # Подготовка проекта для продакшена. Исполнение всех задах + минификация файлов
 # TODO: Реализовать нормальную синхронность выполнения. Сейчас синхронность реализуется с устаревшим gulp.run
-gulp.task 'prod', ['default'], ->
+gulp.task 'prod', ['default', 'autoprefixer'], ->
     gulp.run 'minify'
