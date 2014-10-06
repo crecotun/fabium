@@ -63,8 +63,21 @@
 * `prod` — таск который запускается на сервере или перед заливкой на сервер. Он выполняет группу `default` и после этого запускает `minify`;
 
 
+## Системные требования
+* node.js
+* coffee-script — для запускать gulpfile.coffee. При желании можно перевести .coffee в .js
+
+
+## Проблемы
+При запуске `gulp` система может выдат ошибку о том, что не найден модуль `coffee-script/register`. Решение — установить переменную NODE_PATH
+
+**Ссылки**
+* http://stackoverflow.com/questions/9587665/nodejs-cannot-find-installed-module-on-windows
+* http://stackoverflow.com/questions/12594541/npm-global-install-cannot-find-module
+
 ## TODO
 * Подключить миксины для stylus (http://kouto-swiss.io/, nib)
+* Автопрефиксы
 * конкатенация js
 * base64 для маленьких иконок?
 * JSHint + автоматическое исправление js кода (https://github.com/kirjs/gulp-fixmyjs)
