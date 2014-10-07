@@ -108,12 +108,12 @@ Front-end automated boilerplate
 
 ## TODO
 * Подключить миксины для stylus (http://kouto-swiss.io/, nib)
-* Автопрефиксы
 * конкатенация js
-* base64 для маленьких иконок?
-* JSHint + автоматическое исправление js кода (https://github.com/kirjs/gulp-fixmyjs)
-* подключить http://jamjs.org/
+* base64
+* JSHint
+* bower
 * https://github.com/jackfranklin/gulp-load-plugins
 * https://github.com/sindresorhus/gulp-changed
 * https://www.npmjs.org/package/gulp-accord
 * https://www.npmjs.org/package/gulp-task-listing / https://www.npmjs.org/package/gulp-help
+* Подготовить grunt-версию

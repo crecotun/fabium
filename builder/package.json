@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "front-end boilerplate for fast project start",
   "main": "gulpfile.js",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "gulp": "*",
     "gulp-util": "*",
     "imagemin-pngcrush": "^1.0.0",
@@ -11,14 +12,13 @@
     "gulp-imagemin": "*",
     "gulp-minify-css": "^0.3.10",
     "gulp-uglify": "*",
-    "gulp-autoprefixer": "^1.0.1"
-  },
-  "devDependencies": {
+    "gulp-autoprefixer": "^1.0.1",
     "gulp-coffee": "*",
     "gulp-jade": "*",
     "gulp-plumber": "*",
     "gulp-stylus": "*",
-    "gulp.spritesmith": "*"
+    "gulp.spritesmith": "*",
+    "gulp-load-plugins": "^0.7.0"
   },
   "scripts": {
     "test": "gulp"

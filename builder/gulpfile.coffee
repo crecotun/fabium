@@ -5,20 +5,12 @@
 # node modules
 fs = require 'fs'
 yaml = require 'js-yaml'
+pngcrush = require 'imagemin-pngcrush'
 
 # gulp modules
 gulp = require 'gulp'
-gutil = require 'gulp-util'
-plumber = require 'gulp-plumber'
-stylus = require 'gulp-stylus'
-coffee = require 'gulp-coffee'
-spritesmith = require 'gulp.spritesmith'
-jade = require 'gulp-jade'
-imagemin = require 'gulp-imagemin'
-pngcrush = require 'imagemin-pngcrush'
-minifyCSS = require 'gulp-minify-css'
-uglify = require 'gulp-uglify'
-autoprefixer = require 'gulp-autoprefixer'
+gulpLoadPlugins = require 'gulp-load-plugins'
+g = gulpLoadPlugins()
 
 # config.yml file
 config = yaml.load(fs.readFileSync("config.yml", "utf8"))
@@ -30,7 +22,7 @@ config = yaml.load(fs.readFileSync("config.yml", "utf8"))
 
 # Если случается ошибка при работе галпа, воспроизводтся звук
 consoleErorr = (err) ->
-    gutil.beep()
+    g.util.beep()
     console.log err.message
 
     return
@@ -43,7 +35,9 @@ consoleErorr = (err) ->
 # Генерация спрайтов
 gulp.task 'sprite', ->
     spriteData = gulp.src config.paths.src.sprites.images.all
-        .pipe spritesmith
+        .pipe g.plumber
+            errorHandler: consoleErorr
+        .pipe g.spritesmith
             imgName: 'sprite.png'
             cssName: 'sprite.styl'
             padding: 2
@@ -62,9 +56,9 @@ gulp.task 'sprite', ->
 # Компиляция coffee в js
 gulp.task 'coffee', ->
     gulp.src config.paths.src.scripts.local.all
-        .pipe plumber
+        .pipe g.plumber
             errorHandler: consoleErorr
-        .pipe coffee
+        .pipe g.coffee
             bare: true
         .pipe gulp.dest config.paths.built.scripts.local.path
 
@@ -78,9 +72,9 @@ gulp.task 'scripts', ['coffee', 'vendor']
 # Компиляция stylus в css
 gulp.task 'stylus', ->
     gulp.src config.paths.src.styles.main
-        .pipe plumber
+        .pipe g.plumber
             errorHandler: consoleErorr
-        .pipe stylus()
+        .pipe g.stylus()
         .pipe gulp.dest config.paths.built.styles.path
 
 # Копирования картинок из src в built
@@ -92,16 +86,16 @@ gulp.task 'images', ->
 # Генерируется только папка pages
 gulp.task 'jade', ->
     gulp.src config.paths.src.templates.pages.all
-        .pipe plumber
+        .pipe g.plumber
             errorHandler: consoleErorr
-        .pipe jade
+        .pipe g.jade
             pretty: true
         .pipe gulp.dest config.paths.built.path
 
 # Добавление вендорных префиксов
 gulp.task 'autoprefixer', ->
     gulp.src config.paths.built.styles.all
-        .pipe autoprefixer()
+        .pipe g.autoprefixer()
         .pipe gulp.dest config.paths.built.styles.path
 
 
@@ -112,17 +106,17 @@ gulp.task 'autoprefixer', ->
 # Оптимизация скриптов
 gulp.task 'scripts:min', ->
     gulp.src config.paths.built.scripts.all
-        .pipe plumber
+        .pipe g.plumber
             errorHandler: consoleErorr
-        .pipe uglify()
+        .pipe g.uglify()
         .pipe gulp.dest config.paths.built.scripts.path
 
 # Оптимизация картинок
 gulp.task 'images:min', ->
     gulp.src config.paths.built.images.all
-        .pipe plumber
+        .pipe g.plumber
             errorHandler: consoleErorr
-        .pipe imagemin
+        .pipe g.imagemin
             progressive: true
             svgoPlugins: [
                 removeViewBox: false
@@ -134,9 +128,9 @@ gulp.task 'images:min', ->
 
 gulp.task 'styles:min', ->
     gulp.src config.paths.built.styles.all
-        .pipe plumber
+        .pipe g.plumber
             errorHandler: consoleErorr
-        .pipe minifyCSS()
+        .pipe g.minifyCss()
         .pipe gulp.dest config.paths.built.styles.path
 
 
