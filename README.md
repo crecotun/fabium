@@ -118,3 +118,4 @@ Front-end automated boilerplate
 * https://www.npmjs.org/package/gulp-accord
 * https://www.npmjs.org/package/gulp-task-listing / https://www.npmjs.org/package/gulp-help
 * Подготовить grunt-версию
+* livereload?
