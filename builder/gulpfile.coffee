@@ -160,6 +160,5 @@ gulp.task 'dev', ['default', 'watch']
 gulp.task 'minify', ['scripts:min', 'styles:min', 'images:min']
 
 # Подготовка проекта для продакшена. Исполнение всех задах + минификация файлов
-# TODO: Реализовать нормальную синхронность выполнения. Сейчас синхронность реализуется с устаревшим gulp.run
 gulp.task 'prod', ['default', 'autoprefixer'], ->
-    gulp.run 'minify'
+    gulp.start 'minify'
