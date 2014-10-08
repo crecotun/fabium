@@ -9,8 +9,8 @@ paths:
 
     sprites:
       images: 
-        all: "../src/assets/images/sprite/*"
-        path: "../src/assets/images/sprite"
+        all: "../src/assets/images/design/sprite/*"
+        path: "../src/assets/images/design/sprite"
       style: "../src/assets/styles/common"
 
     scripts:
@@ -19,9 +19,13 @@ paths:
       vendor:
         all: "../src/assets/scripts/vendor/**/*.js"
 
-    images: 
+    images:
       all: "../src/assets/images/**/*.*"
       path: "../src/assets/images"
+      design:
+        path: "../src/assets/images/design"
+      content:
+        path: "../src/assets/images/content"
 
     templates:
       all: "../src/templates/**/*.jade"
@@ -48,6 +52,10 @@ paths:
       vendor:
         path: "../built/assets/scripts/vendor"
 
-    images: 
+    images:
       all: "../built/assets/images/**/*.*"
       path: "../built/assets/images"
+      design: 
+        path: "../built/assets/images/design"
+      content: 
+        path: "../built/assets/images/content"

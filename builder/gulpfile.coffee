@@ -48,7 +48,7 @@ gulp.task 'sprite', ->
                 sprite.name = 's-' + sprite.name
                 return
 
-    spriteData.img.pipe(gulp.dest(config.paths.built.images.path)); # путь, куда сохраняем картинку
+    spriteData.img.pipe(gulp.dest(config.paths.built.images.design.path)); # путь, куда сохраняем картинку
     spriteData.css.pipe(gulp.dest(config.paths.src.sprites.style)); # путь, куда сохраняем стили
 
     return
