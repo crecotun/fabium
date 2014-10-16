@@ -20,6 +20,16 @@ cut-text()
     -ms-text-overflow ellipsis
     text-overflow ellipsis
 
+placeholder(color)
+    &::-webkit-input-placeholder
+        color color
+    
+    &::-moz-placeholder
+        color color
+
+    &:-ms-input-placeholder
+        color color
+
 clearfix()
     &:after
         content ""
