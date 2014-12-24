@@ -49,6 +49,23 @@ user-select()
     -webkit-user-select arguments
     -moz-user-select arguments
     user-select arguments
+    
+// placeholder mixin
+// to use:
+// +placeholder()
+//     color #000
+//     opacity 1
+placeholder()
+    if selector() == "&"
+        error( "placeholder() must be called from a ruleset!" )
+    &::-webkit-input-placeholder
+        {block}
+    &:-moz-placeholder
+        {block}
+    &::-moz-placeholder
+        {block}
+    &:-ms-input-placeholder
+        {block}
 
 
 spriteWidth($sprite)
