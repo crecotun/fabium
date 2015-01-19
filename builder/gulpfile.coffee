@@ -32,6 +32,9 @@ consoleErorr = (err) ->
 ##### Таски
 ##################################################################################
 
+gulp.task 'bower', ->
+    g.bower config.paths.built.libs
+
 # Генерация спрайтов
 gulp.task 'sprite', ->
     spriteData = gulp.src config.paths.src.sprites.images.all
@@ -151,7 +154,7 @@ gulp.task 'watch', ->
 ##################################################################################
 
 # Выполнение всех тасков
-gulp.task 'default', ['sprite', 'stylus', 'scripts', 'images', 'jade']
+gulp.task 'default', ['sprite', 'stylus', 'scripts', 'images', 'jade', 'bower']
 
 # Dev таск для разработки с отслеживанием измнений файлов и компиляцией их на лету
 gulp.task 'dev', ['default', 'watch']

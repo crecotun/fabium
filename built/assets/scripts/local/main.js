@@ -1,1 +1,3 @@
-!function(){return console.log("Hi there")}();
+(function() {
+  return console.log('Hi there');
+})();

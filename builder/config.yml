@@ -59,3 +59,6 @@ paths:
         path: "../built/assets/images/design"
       content: 
         path: "../built/assets/images/content"
+
+    libs:
+      path: '../built/assets/libs/'
