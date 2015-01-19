@@ -53,7 +53,7 @@ Front-end automated boilerplate
 - `assets`
     + `styles` — стили проекта
     + `images` — картинки проекта, включая `content` папку для картинок в контенте
-    + `scripts` — скрипты делятся на 2 типа: сторонние библиотеки (`vendor`) и то, что было написано для этого проекта (`local`)
+    + `scripts` — скрипты
 - `templates`
     + `pages` — шаблоны страниц
     + `blocks` — блоки из которых будут собираться страницы.
@@ -66,8 +66,7 @@ Front-end automated boilerplate
 
 ### Задачи
 * `sprite` — генерация спрайта на основе картинок, который лежат в папке `config.paths.src.sprites.images.all`
-* `coffee` — компиляция `.сoffee` из папки `local`
-* `vendor` — перенос скриптов в `built` папку
+* `coffee` — компиляция `.сoffee` из папки `scripts`
 * `stylus` — компиляция `.styl`
 * `images` — перенос картинок в `built` папку
 * `jade` — компиляция `.jade`-шаблонов
@@ -112,7 +111,6 @@ Front-end automated boilerplate
 * конкатенация js
 * base64
 * JSHint
-* bower
 * https://github.com/jackfranklin/gulp-load-plugins
 * https://github.com/sindresorhus/gulp-changed
 * https://www.npmjs.org/package/gulp-accord
