@@ -58,19 +58,17 @@ gulp.task 'sprite', ->
 
 # Компиляция coffee в js
 gulp.task 'coffee', ->
-    gulp.src config.paths.src.scripts.local.all
+    gulp.src config.paths.src.scripts.all
         .pipe g.plumber
             errorHandler: consoleErorr
         .pipe g.coffee
             bare: true
-        .pipe gulp.dest config.paths.built.scripts.local.path
+        .pipe gulp.dest config.paths.built.scripts.path
 
 # перенос скриптов из папки вендор в built
 gulp.task 'vendor', ->
     gulp.src config.paths.src.scripts.vendor.all
         .pipe gulp.dest config.paths.built.scripts.vendor.path
-
-gulp.task 'scripts', ['coffee', 'vendor']
 
 # Компиляция stylus в css
 gulp.task 'stylus', ->
@@ -139,8 +137,7 @@ gulp.task 'styles:min', ->
 
 # Отслеживанием изменение файлов
 gulp.task 'watch', ->
-    gulp.watch config.paths.src.scripts.local.all, ['coffee']
-    gulp.watch config.paths.src.scripts.vendor.all, ['vendor']
+    gulp.watch config.paths.src.scripts.all, ['coffee']
     gulp.watch config.paths.src.styles.all, ['stylus']
     gulp.watch config.paths.src.images.all, ['images']
     gulp.watch config.paths.src.sprites.images.all, ['sprite']
@@ -154,7 +151,7 @@ gulp.task 'watch', ->
 ##################################################################################
 
 # Выполнение всех тасков
-gulp.task 'default', ['sprite', 'stylus', 'scripts', 'images', 'jade', 'bower']
+gulp.task 'default', ['bower', 'sprite', 'stylus', 'coffee', 'images', 'jade']
 
 # Dev таск для разработки с отслеживанием измнений файлов и компиляцией их на лету
 gulp.task 'dev', ['default', 'watch']

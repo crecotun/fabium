@@ -14,10 +14,7 @@ paths:
       style: "../src/assets/styles/common"
 
     scripts:
-      local:
-        all: "../src/assets/scripts/local/**/*.coffee"
-      vendor:
-        all: "../src/assets/scripts/vendor/**/*.js"
+      all: "../src/assets/scripts/**/*.coffee"
 
     images:
       all: "../src/assets/images/**/*.*"
@@ -47,10 +44,6 @@ paths:
     scripts:
       all: "../built/assets/scripts/**/*.js"
       path: "../built/assets/scripts/"
-      local:
-        path: "../built/assets/scripts/local"
-      vendor:
-        path: "../built/assets/scripts/vendor"
 
     images:
       all: "../built/assets/images/**/*.*"
