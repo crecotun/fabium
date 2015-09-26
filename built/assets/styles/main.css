@@ -238,23 +238,23 @@ strong {
 }
 .navigation a.m-pin:before {
   background-image: url("../images/design/sprite.png");
-  background-position: -36px -54px;
+  background-position: -72px -54px;
   width: 12px;
   height: 16px;
 }
 .navigation a.m-pin:hover:before {
-  background-position: -50px -54px;
+  background-position: -72px -36px;
   width: 12px;
   height: 16px;
 }
 .navigation a.m-user:before {
   background-image: url("../images/design/sprite.png");
-  background-position: -72px -36px;
+  background-position: -36px -54px;
   width: 16px;
   height: 16px;
 }
 .navigation a.m-user:hover:before {
-  background-position: -72px -54px;
+  background-position: -72px -18px;
   width: 16px;
   height: 16px;
 }
@@ -287,7 +287,7 @@ strong {
   height: 16px;
 }
 .navigation a.m-trash:hover:before {
-  background-position: -72px -18px;
+  background-position: -54px -54px;
   width: 16px;
   height: 16px;
 }
