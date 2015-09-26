@@ -59,7 +59,7 @@ gulp.task('sprite', () => {
 
 });
 
-// # Компиляция coffee в js
+// # coffee to js
 gulp.task('coffee', () => {
 	gulp.src( config.paths.src.scripts.all )
 		.pipe( g.plumber({
@@ -71,13 +71,7 @@ gulp.task('coffee', () => {
 		.pipe( gulp.dest( config.paths.built.scripts.path ) );
 });
 
-// # перенос скриптов из папки вендор в built
-gulp.task( 'vendor', () => {
-	gulp.src( config.paths.src.scripts.vendor.all )
-		.pipe( gulp.dest( config.paths.built.scripts.vendor.path ) );
-});
-
-// # Компиляция stylus в css
+// # stylus to css
 gulp.task( 'stylus', () => {
 	gulp.src( config.paths.src.styles.main )
 		.pipe( g.plumber({
@@ -87,14 +81,14 @@ gulp.task( 'stylus', () => {
 		.pipe( gulp.dest( config.paths.built.styles.path ) );
 });
 
-// # Копирования картинок из src в built
+// # move images from src to built
 gulp.task( 'images', () => {
 	gulp.src( [config.paths.src.images.all, '!'+config.paths.src.sprites.images.all] )
 		.pipe( gulp.dest( config.paths.built.images.path ) );
 });
 
-// # Генерирование jade шаблонов
-// # Генерируется только папка pages
+// # jade to html
+// # compile just 1 level of `pages` folder
 gulp.task( 'jade', () => {
 	gulp.src( config.paths.src.templates.pages.all )
 		.pipe( g.plumber({
@@ -106,7 +100,7 @@ gulp.task( 'jade', () => {
 		.pipe( gulp.dest( config.paths.built.path ) );
 });
 
-// # Добавление вендорных префиксов
+// # add vendor prefixes
 gulp.task( 'autoprefixer', () => {
 	gulp.src( config.paths.built.styles.all )
 		.pipe( g.autoprefixer() )
@@ -115,10 +109,10 @@ gulp.task( 'autoprefixer', () => {
 
 
 // ##################################################################################
-// ##### Такси оптимизации
+// ##### Optimization
 // ##################################################################################
 
-// # Оптимизация скриптов
+// # minify js
 gulp.task( 'scripts:min', () => {
 	gulp.src( config.paths.built.scripts.all )
 		.pipe( g.plumber({
@@ -128,7 +122,7 @@ gulp.task( 'scripts:min', () => {
 		.pipe( gulp.dest( config.paths.built.scripts.path ) );
 });
 
-// # Оптимизация картинок
+// # minify images
 gulp.task( 'images:min', () => {
 	gulp.src( config.paths.built.images.all )
 		.pipe( g.plumber({
@@ -148,6 +142,7 @@ gulp.task( 'images:min', () => {
 		.pipe( gulp.dest( config.paths.built.images.path ) );
 });
 
+// minify css
 gulp.task( 'styles:min', () => {
 	gulp.src( config.paths.built.styles.all )
 		.pipe( g.plumber({
@@ -158,7 +153,7 @@ gulp.task( 'styles:min', () => {
 });
 
 
-// # Отслеживанием изменение файлов
+// Watch for changes
 gulp.task( 'watch', () => {
 	gulp.watch( config.paths.src.scripts.all, ['coffee'] );
 	gulp.watch( config.paths.src.styles.all, ['stylus'] );
@@ -169,19 +164,19 @@ gulp.task( 'watch', () => {
 
 
 // ##################################################################################
-// ##### Таски по группам
+// ##### Groups of tasks
 // ##################################################################################
 
-// # Выполнение всех тасков
+// Run all tasks
 gulp.task( 'default', ['bower', 'sprite', 'stylus', 'coffee', 'images', 'jade'] );
 
-// # Dev таск для разработки с отслеживанием измнений файлов и компиляцией их на лету
+// Run all tasks and start watching for changes
 gulp.task( 'dev', ['default', 'watch'] );
 
-// # минификация js, css и оптимизация изображений.
+// minify js, css and images
 gulp.task( 'minify', ['scripts:min', 'styles:min', 'images:min'] );
 
-// # Подготовка проекта для продакшена. Исполнение всех задах + минификация файлов
+// Prepare project for production. Run all tasks and minify assets
 gulp.task( 'prod', ['default', 'autoprefixer'], () => {
 	gulp.start('minify');
 });
