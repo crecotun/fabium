@@ -13,7 +13,7 @@ import gulpLoadPlugins from 'gulp-load-plugins'
 const g = gulpLoadPlugins()
 
 // # config.yml file
-const config = yaml.load( fs.readFileSync("config.yml", "utf8") )
+import config from './gulp-config.json'
 
 
 // ##################################################################################
