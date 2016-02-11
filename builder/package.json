@@ -21,8 +21,7 @@
     "gulp-uglify": "^1.4.1",
     "gulp-util": "^3.0.6",
     "gulp.spritesmith": "^4.1.1",
-    "imagemin-pngcrush": "^4.1.0",
-    "js-yaml": "^3.4.2"
+    "imagemin-pngcrush": "^4.1.0"
   },
   "scripts": {
     "test": "gulp"

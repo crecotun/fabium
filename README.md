@@ -107,13 +107,7 @@ Front-end automated boilerplate
 * http://stackoverflow.com/questions/12594541/npm-global-install-cannot-find-module
 
 ## TODO
-* Подключить миксины для stylus (http://kouto-swiss.io/, nib)
-* конкатенация js
 * base64
-* JSHint
-* https://github.com/jackfranklin/gulp-load-plugins
 * https://github.com/sindresorhus/gulp-changed
 * https://www.npmjs.org/package/gulp-accord
 * https://www.npmjs.org/package/gulp-task-listing / https://www.npmjs.org/package/gulp-help
-* Подготовить grunt-версию
-* livereload?

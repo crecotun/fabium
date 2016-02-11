@@ -1,0 +1,14 @@
+- translate `readme` to english
+- get rid of `builder` folder
+- extract gulp tasks to files
+- get rid of `bower`
+- add `deploy` task
+- add `svg2font` task
+- add beautifier for html code. jade sometimes compiles with bad indentation
+- `built` -> `dist`
+- support for 1x and 2x sprites
+- add `eslint`
+- add `browserify`
+- add `browsersync`
+- add `rtl`
+- update `gulp` to 4 version
