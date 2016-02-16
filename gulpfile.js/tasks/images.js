@@ -4,19 +4,14 @@ const $ = require('gulp-load-plugins')();
 const config = require('../config')
 const consoleError = require('../utils/console_error');
 
-function scripts() {
-	return gulp.src( config.paths.src.scripts.all )
+function images() {
+	return gulp.src( [config.paths.src.images.all, '!'+config.paths.src.sprites.images.all] )
 		.pipe(
 			$.plumber({
 				errorHandler: consoleError
 			})
 		)
-		.pipe(
-			$.babel({
-				presets: ['es2015']
-			})
-		)
-		.pipe( gulp.dest( config.paths.built.scripts.path ) );
+		.pipe( gulp.dest( config.paths.built.images.path ) );
 };
 
-module.exports = scripts;
+module.exports = images;
