@@ -1,3 +1,5 @@
-(function() {
-  return console.log('Hi there');
+'use strict';
+
+(function () {
+	console.log('Hi there');
 })();
