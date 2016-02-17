@@ -6,7 +6,7 @@ var
 	consoleError = require('../utils/console_error');
 
 function templates() {
-	return gulp.src( config.paths.src.templates.pages.all )
+	return gulp.src( config.paths.src.templates.pages.all, {since: gulp.lastRun('templates')} )
 		.pipe(
 			$.jade({
 				pretty: true

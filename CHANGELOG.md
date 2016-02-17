@@ -1,3 +1,6 @@
+### 1.0.1
+- added option `since`, to prevent processing unchanged files.
+
 ### 1.0.0
 - gulp 4
 - removed `builder folder`

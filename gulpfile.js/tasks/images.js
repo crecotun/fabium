@@ -6,7 +6,7 @@ var
 	consoleError = require('../utils/console_error');
 
 function images() {
-	return gulp.src( [config.paths.src.images.all, '!'+config.paths.src.sprites.images.all] )
+	return gulp.src( [config.paths.src.images.all, '!'+config.paths.src.sprites.images.all], {since: gulp.lastRun('images')} )
 		.pipe(
 			$.plumber({
 				errorHandler: consoleError
