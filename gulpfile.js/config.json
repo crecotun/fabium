@@ -9,8 +9,8 @@
 			},
 			"sprites": {
 				"images": {
-					"all": "./src/assets/images/design/sprite/*",
-					"path": "./src/assets/images/design/sprite"
+					"all": "./src/assets/images/sprite/*",
+					"path": "./src/assets/images/sprite"
 				},
 				"style": "./src/assets/styles/common"
 			},
@@ -19,13 +19,7 @@
 			},
 			"images": {
 				"all": "./src/assets/images/**/*.*",
-				"path": "./src/assets/images",
-				"design": {
-					"path": "./src/assets/images/design"
-				},
-				"content": {
-					"path": "./src/assets/images/content"
-				}
+				"path": "./src/assets/images"
 			},
 			"templates": {
 				"all": "./src/templates/**/*.jade",
@@ -52,13 +46,7 @@
 			},
 			"images": {
 				"all": "./built/assets/images/**/*.*",
-				"path": "./built/assets/images",
-				"design": {
-					"path": "./built/assets/images/design"
-				},
-				"content": {
-					"path": "./built/assets/images/content"
-				}
+				"path": "./built/assets/images"
 			},
 			"libs": {
 				"path": "./built/assets/libs/"

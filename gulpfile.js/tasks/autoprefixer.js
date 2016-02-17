@@ -1,19 +1,19 @@
 var
 	gulp = require('gulp'),
 	$ = require('gulp-load-plugins')(),
+	autoprefixer = require('autoprefixer'),
 
 	config = require('../config'),
 	consoleError = require('../utils/console_error');
 
-function styles() {
-	return gulp.src( config.paths.src.styles.main )
+function prefixer() {
+	return gulp.src( config.paths.built.styles.all )
 		.pipe(
-			$.plumber({
-				errorHandler: consoleError
-			})
+			$.postcss(
+				[ autoprefixer() ]
+			)
 		)
-		.pipe( $.stylus() )
 		.pipe( gulp.dest( config.paths.built.styles.path ) );
 };
 
-module.exports = styles;
+module.exports = prefixer;

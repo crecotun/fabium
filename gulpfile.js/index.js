@@ -3,21 +3,24 @@
 // ##################################################################################
 
 // gulp modules
-const gulp = require('gulp');
-const $ = require('gulp-load-plugins')();
+var
+	gulp = require('gulp'),
+	$ = require('gulp-load-plugins')(),
 
-// # config.yml file
-const config = require('./config');
+	// # config.yml file
+	config = require('./config'),
 
-// tasks
-const styles = require('./tasks/styles');
-const scripts = require('./tasks/scripts');
-const images = require('./tasks/images');
-const templates = require('./tasks/templates');
-const watch = require('./tasks/watch');
+	// tasks
+	styles = require('./tasks/styles'),
+	scripts = require('./tasks/scripts'),
+	images = require('./tasks/images'),
+	templates = require('./tasks/templates'),
+	sprites = require('./tasks/sprites/sprites'),
+	autoprefixer = require('./tasks/autoprefixer'),
+	watch = require('./tasks/watch'),
 
-// utils
-const consoleError = require('./utils/console_error');
+	// utils
+	consoleError = require('./utils/console_error');
 
 // ##################################################################################
 // ##### Tasks
@@ -25,7 +28,10 @@ const consoleError = require('./utils/console_error');
 gulp.task('styles', styles);
 gulp.task('scripts', scripts);
 gulp.task('images', images);
-gulp.task('templates', templates)
+gulp.task('templates', templates);
+gulp.task('sprites', sprites);
+gulp.task('autoprefixer', autoprefixer);
+
 gulp.task('watch', watch);
 
 
@@ -35,5 +41,13 @@ gulp.task('watch', watch);
 
 // Run all tasks
 // gulp.task( 'default', gulp.series('bower', 'sprite', 'stylus', 'coffee', 'images', 'jade') );
-gulp.task( 'default', gulp.parallel('images', 'styles', 'scripts', 'templates') );
-gulp.task('dev', gulp.series('default', 'watch'))
+gulp.task('default',
+	gulp.series(
+		gulp.parallel('images', 'styles', 'scripts', 'templates', 'sprites'),
+		gulp.series('autoprefixer')
+	)
+);
+
+gulp.task('dev',
+	gulp.series('default', 'watch')
+);

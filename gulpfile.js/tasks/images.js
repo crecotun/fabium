@@ -1,8 +1,9 @@
-const gulp = require('gulp');
-const $ = require('gulp-load-plugins')();
+var
+	gulp = require('gulp'),
+	$ = require('gulp-load-plugins')(),
 
-const config = require('../config')
-const consoleError = require('../utils/console_error');
+	config = require('../config'),
+	consoleError = require('../utils/console_error');
 
 function images() {
 	return gulp.src( [config.paths.src.images.all, '!'+config.paths.src.sprites.images.all] )
