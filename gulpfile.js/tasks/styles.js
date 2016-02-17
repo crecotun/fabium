@@ -6,7 +6,7 @@ var
 	consoleError = require('../utils/console_error');
 
 function styles() {
-	return gulp.src( config.paths.src.styles.main )
+	return gulp.src( config.paths.src.styles.main, {since: gulp.lastRun('styles')} )
 		.pipe(
 			$.plumber({
 				errorHandler: consoleError
