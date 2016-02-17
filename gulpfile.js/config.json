@@ -38,10 +38,12 @@
 			"path": "./built/",
 			"styles": {
 				"all": "./built/assets/styles/**/*.css",
+				"all_minified": "./built/assets/styles/**/*.min.css",
 				"path": "./built/assets/styles"
 			},
 			"scripts": {
 				"all": "./built/assets/scripts/**/*.js",
+				"all_minified": "./built/assets/scripts/**/*.min.js",
 				"path": "./built/assets/scripts/"
 			},
 			"images": {
