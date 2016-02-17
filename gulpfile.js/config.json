@@ -1,0 +1,58 @@
+{
+	"paths": {
+		"src": {
+			"path": "./src/",
+			"styles": {
+				"all": "./src/assets/styles/**/*.styl",
+				"main": "./src/assets/styles/main.styl",
+				"path": "./src/assets/styles"
+			},
+			"sprites": {
+				"images": {
+					"all": "./src/assets/images/sprite/*",
+					"path": "./src/assets/images/sprite"
+				},
+				"style": "./src/assets/styles/common"
+			},
+			"scripts": {
+				"all": "./src/assets/scripts/**/*.js"
+			},
+			"images": {
+				"all": "./src/assets/images/**/*.*",
+				"path": "./src/assets/images"
+			},
+			"templates": {
+				"all": "./src/templates/**/*.jade",
+				"path": "./src/templates",
+				"blocks": {
+					"all": "./src/templates/blocks/**/*.jade",
+					"path": "./src/templates/blocks"
+				},
+				"pages": {
+					"all": "./src/templates/pages/**/*.jade",
+					"path": "./src/templates/pages"
+				}
+			}
+		},
+		"built": {
+			"path": "./built/",
+			"styles": {
+				"all": "./built/assets/styles/**/*.css",
+				"all_minified": "./built/assets/styles/**/*.min.css",
+				"path": "./built/assets/styles"
+			},
+			"scripts": {
+				"all": "./built/assets/scripts/**/*.js",
+				"all_minified": "./built/assets/scripts/**/*.min.js",
+				"path": "./built/assets/scripts/"
+			},
+			"images": {
+				"all": "./built/assets/images/**/*.*",
+				"path": "./built/assets/images"
+			},
+			"libs": {
+				"path": "./built/assets/libs/"
+			}
+		}
+	}
+}

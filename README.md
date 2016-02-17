@@ -1,5 +1,11 @@
 Front-end automated boilerplate
 ====================
+
+## How to use
+1. install deps `npm i`
+2. all tasks should be started via npm. e.g. `npm run gulp`, `npm run gulp dev`.
+	It looks a bit ugly, but this is the only way to work with 4 ver of gulp until it'll be finally released.
+
 Автоматизированный шаблон для быстрого старта front-end разработки
 
 ## Навигация
