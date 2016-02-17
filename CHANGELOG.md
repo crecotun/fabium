@@ -1,3 +1,6 @@
+### 1.1
+- added browsersync
+
 ### 1.0.1
 - added option `since`, to prevent processing unchanged files.
 

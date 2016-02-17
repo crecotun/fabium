@@ -35,24 +35,28 @@
 			}
 		},
 		"built": {
-			"path": "./built/",
+			"path": "./dist/",
 			"styles": {
-				"all": "./built/assets/styles/**/*.css",
-				"all_minified": "./built/assets/styles/**/*.min.css",
-				"path": "./built/assets/styles"
+				"all": "./dist/assets/styles/**/*.css",
+				"all_minified": "./dist/assets/styles/**/*.min.css",
+				"path": "./dist/assets/styles"
 			},
 			"scripts": {
-				"all": "./built/assets/scripts/**/*.js",
-				"all_minified": "./built/assets/scripts/**/*.min.js",
-				"path": "./built/assets/scripts/"
+				"all": "./dist/assets/scripts/**/*.js",
+				"all_minified": "./dist/assets/scripts/**/*.min.js",
+				"path": "./dist/assets/scripts/"
 			},
 			"images": {
-				"all": "./built/assets/images/**/*.*",
-				"path": "./built/assets/images"
+				"all": "./dist/assets/images/**/*.*",
+				"path": "./dist/assets/images"
 			},
 			"libs": {
-				"path": "./built/assets/libs/"
+				"path": "./dist/assets/libs/"
+			},
+			"templates": {
+				"all": "./dist/**/*.html"
 			}
+
 		}
 	}
 }

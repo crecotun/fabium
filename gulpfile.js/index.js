@@ -22,6 +22,7 @@ var
 	autoprefixer = require('./tasks/autoprefixer'),
 	watch = require('./tasks/watch'),
 	bower = require('./tasks/bower'),
+	browsersync = require('./tasks/browsersync'),
 
 	// utils
 	consoleError = require('./utils/console_error');
@@ -48,6 +49,8 @@ gulp.task('autoprefixer', autoprefixer);
 
 gulp.task('watch', watch);
 
+gulp.task('browsersync', browsersync);
+
 // ##################################################################################
 // ##### Groups of tasks
 // ##################################################################################
@@ -61,7 +64,7 @@ gulp.task('default',
 );
 
 gulp.task('dev',
-	gulp.series('default', 'watch')
+	gulp.series('default', 'browsersync', 'watch')
 );
 
 gulp.task('minify',
