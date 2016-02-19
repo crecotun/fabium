@@ -64,7 +64,10 @@ gulp.task('default',
 );
 
 gulp.task('dev',
-	gulp.series('default', 'browsersync', 'watch')
+	gulp.parallel(
+		gulp.series('default', 'browsersync'),
+		'watch'
+	)
 );
 
 gulp.task('minify',
