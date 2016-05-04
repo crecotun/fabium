@@ -1,5 +1,11 @@
+### 1.3
+- `stylus` replaced with `sass`
+
+### 1.2
+- added `jade-inheritance`
+
 ### 1.1
-- added browsersync
+- added `browsersync`
 
 ### 1.0.1
 - added option `since`, to prevent processing unchanged files.

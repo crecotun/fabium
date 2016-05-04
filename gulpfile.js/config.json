@@ -3,8 +3,8 @@
 		"src": {
 			"path": "./src/",
 			"styles": {
-				"all": "./src/assets/styles/**/*.styl",
-				"main": "./src/assets/styles/main.styl",
+				"all": "./src/assets/styles/**/*.sass",
+				"main": "./src/assets/styles/main.sass",
 				"path": "./src/assets/styles"
 			},
 			"sprites": {
