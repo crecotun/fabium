@@ -6,13 +6,13 @@ var
 	consoleError = require('../utils/console_error');
 
 function styles() {
-	return gulp.src( config.paths.src.styles.main, {since: gulp.lastRun('styles')} )
+	return gulp.src( config.paths.src.styles.main )
 		.pipe(
 			$.plumber({
 				errorHandler: consoleError
 			})
 		)
-		.pipe( $.stylus() )
+		.pipe( $.sass() )
 		.pipe( gulp.dest( config.paths.built.styles.path ) );
 };
 

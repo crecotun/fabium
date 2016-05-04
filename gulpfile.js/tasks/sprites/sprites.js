@@ -1,5 +1,4 @@
 var
-	pngcrush = require('imagemin-pngcrush'),
 	merge = require('merge-stream'),
 	gulp = require('gulp'),
 	$ = require('gulp-load-plugins')(),
@@ -18,14 +17,14 @@ function sprites() {
 		.pipe(
 			$.spritesmith({
 				imgName: 'sprite.png',
-				cssName: 'sprite.styl',
+				cssName: 'sprite.sass',
 				padding: 2,
-				cssFormat: 'stylus',
+				cssFormat: 'sass',
 				algorithm: 'binary-tree',
 				cssVarMap: function (sprite) {
 					sprite.name = 's-' + sprite.name
 				},
-				cssTemplate: __dirname + '/sprite.stylus.handlebars',
+				cssTemplate: __dirname + '/sprite.sass.handlebars',
 		}) );
 
 	var imgStream = spriteData.img
