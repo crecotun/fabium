@@ -1,3 +1,6 @@
+### 1.4
+- `gulp-rtlcss` support
+
 ### 1.3
 - `stylus` replaced with `sass`
 
