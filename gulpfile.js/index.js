@@ -20,7 +20,6 @@ var
 	imagesMin = require('./tasks/images_min'),
 	templates = require('./tasks/templates'),
 	sprites = require('./tasks/sprites/sprites'),
-	autoprefixer = require('./tasks/autoprefixer'),
 	watch = require('./tasks/watch'),
 	bower = require('./tasks/bower'),
 	browsersync = require('./tasks/browsersync'),
@@ -47,8 +46,6 @@ gulp.task('sprites', sprites);
 
 gulp.task('bower', bower);
 
-gulp.task('autoprefixer', autoprefixer);
-
 gulp.task('watch', watch);
 
 gulp.task('browsersync', browsersync);
@@ -59,17 +56,11 @@ gulp.task('browsersync', browsersync);
 
 // Run all tasks
 gulp.task('default',
-	gulp.series(
-		gulp.parallel('bower', 'images', 'styles', 'scripts', 'templates', 'sprites'),
-		gulp.series('autoprefixer')
-	)
+	gulp.series('bower', 'images', 'styles', 'scripts', 'templates', 'sprites')
 );
 
 gulp.task('dev',
-	gulp.parallel(
-		gulp.series('default', 'browsersync'),
-		'watch'
-	)
+	gulp.series('default', 'browsersync', 'watch')
 );
 
 gulp.task('minify',
