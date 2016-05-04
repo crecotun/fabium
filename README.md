@@ -6,6 +6,16 @@ Front-end automated boilerplate
 2. all tasks should be started via npm. e.g. `npm run gulp`, `npm run gulp dev`.
 	It looks a bit ugly, but this is the only way to work with 4 ver of gulp until it'll be finally released.
 
+## So, what do we have under the hood for now?
+- jade -> html
+- sass -> css
+- sprites generation
+- browsersync
+- autoprefixer
+- bower
+- es2015 compilation
+- watch 'n compile
+
 Автоматизированный шаблон для быстрого старта front-end разработки
 
 ## Навигация
