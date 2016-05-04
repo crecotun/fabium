@@ -1,3 +1,9 @@
+### 1.4
+- `gulp-rtlcss` support
+- `autoprefixer` via `gulp-postcss`
+- `autoprefixer` was removed as separate task, now it's inside `styles` task
+- removed `parallel` tasks
+
 ### 1.3
 - `stylus` replaced with `sass`
 
