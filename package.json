@@ -13,9 +13,11 @@
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-babel": "^6.1.2",
     "gulp-bower": "0.0.10",
-    "gulp-coffee": "^2.3.1",
+    "gulp-filter": "^4.0.0",
+    "gulp-if": "^2.0.0",
     "gulp-imagemin": "^2.3.0",
     "gulp-jade": "^1.1.0",
+    "gulp-jade-inheritance": "^0.5.5",
     "gulp-load-plugins": "^0.10.0",
     "gulp-minify-css": "^1.2.1",
     "gulp-plumber": "^1.0.1",
@@ -26,10 +28,12 @@
     "gulp-util": "^3.0.6",
     "gulp.spritesmith": "^6.2.0",
     "imagemin-pngcrush": "^4.1.0",
+    "jade": "^1.11.0",
     "merge-stream": "^1.0.0"
   },
   "scripts": {
-    "gulp": "./node_modules/.bin/gulp"
+    "gulp": "./node_modules/.bin/gulp",
+		"dev": "gulp dev"
   },
   "repository": {
     "type": "git",
