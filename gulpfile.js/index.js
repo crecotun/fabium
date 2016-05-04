@@ -13,6 +13,7 @@ var
 	// tasks
 	styles = require('./tasks/styles'),
 	stylesMin = require('./tasks/styles_min'),
+	stylesRTL = require('./tasks/styles_rtl')
 	scripts = require('./tasks/scripts'),
 	scriptsMin = require('./tasks/scripts_min'),
 	images = require('./tasks/images'),
@@ -32,6 +33,7 @@ var
 // ##################################################################################
 gulp.task('styles', styles);
 gulp.task('styles:min', stylesMin);
+gulp.task('styles:rtl', stylesRTL);
 
 gulp.task('scripts', scripts);
 gulp.task('scripts:min', scriptsMin);
