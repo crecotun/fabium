@@ -1,0 +1,108 @@
+// useful
+@mixin cut-text
+	overflow: hidden
+	white-space: nowrap
+	text-overflow: ellipsis
+
+@mixin clearfix
+	&:after
+		content: ""
+		display: table
+		clear: both
+
+@mixin reset-input
+	border: 0
+	padding: 0
+	margin: 0
+	outline: none
+	background: none
+
+// placeholder mixin
+// to use:
+// +placeholder()
+//     color #000
+//     opacity 1
+@mixin placeholder
+	// if selector() == "&"
+	// 	error( "placeholder() must be called from a ruleset!" )
+	&::-webkit-input-placeholder
+		@content
+	&:-moz-placeholder
+		@content
+	&::-moz-placeholder
+		@content
+	&:-ms-input-placeholder
+		@content
+
+// center block when poa+t50%+l50%
+@mixin center
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+
+@mixin responsive($value)
+	@media ( $value )
+		@content
+
+// sprite mixins
+@mixin spriteWidth($sprite)
+	width: nth($sprite, 5)
+
+@mixin spriteHeight($sprite)
+	height: nth($sprite, 6)
+
+@mixin spritePosition($sprite)
+	background-position: nth($sprite, 3) nth($sprite, 4)
+
+@mixin spriteImage($sprite)
+	background-image: url(../images/#{nth($sprite, 9)})
+
+@mixin sprite($sprite)
+	$selector: #{&}
+	$hover: str-index($selector, 'hover')
+	$active: str-index($selector, 'active')
+
+	@if not ($active or $hover)
+		+spriteImage($sprite)
+
+	+spritePosition($sprite)
+	+spriteWidth($sprite)
+	+spriteHeight($sprite)
+
+// font icon
+@mixin icon
+	display: inline-block
+	font-family: "icons"
+	font-style: normal
+	font-weight: normal
+	font-variant: normal
+	line-height: 1
+	text-decoration: inherit
+	text-rendering: optimizeLegibility
+	text-transform: none
+	-moz-osx-font-smoothing: grayscale
+	-webkit-font-smoothing: antialiased
+	font-smoothing: antialiased
+
+// generateButtonStyles
+@mixin generateButtonStyles($className, $color, $textColorHover: #fff)
+	&.-#{$className}
+		&
+			&
+				background-color: $color
+				color: #fff
+
+			&:hover
+				background-color: darken($color, 10%)
+
+		&.-bordered
+			&
+				background-color: transparent
+				color: $color
+				border-color: $color
+
+			&:hover
+				background-color: darken($color, 10%)
+				border-color: darken($color, 10%)
+				color: #fff
