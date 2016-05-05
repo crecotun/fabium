@@ -12,7 +12,7 @@ function stylesMin() {
 				errorHandler: consoleError
 			})
 		)
-		.pipe( $.minifyCss() )
+		.pipe( $.csso() )
 		.pipe(
 			$.rename( function(path) {
 				path.basename += '.min';
