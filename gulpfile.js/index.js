@@ -7,7 +7,7 @@ var
 	gulp = require('gulp'),
 	$ = require('gulp-load-plugins')(),
 
-	// # config.yml file
+	// # config.json file
 	config = require('./config'),
 
 	// tasks
@@ -24,6 +24,7 @@ var
 	bower = require('./tasks/bower'),
 	browsersync = require('./tasks/browsersync'),
 	zip = require('./tasks/zip'),
+	ssh = require('./tasks/ssh/ssh'),
 
 	// utils
 	consoleError = require('./utils/console_error');
@@ -51,8 +52,11 @@ gulp.task('watch', watch);
 
 gulp.task('browsersync', browsersync);
 
-gulp.task('archive:all', zip.zipSrc);
+gulp.task('archive:src', zip.zipSrc);
 gulp.task('archive:dist', zip.zipDist);
+
+gulp.task('ssh:clear_remote', ssh.clearRemote);
+gulp.task('ssh:upload', ssh.upload);
 
 // ##################################################################################
 // ##### Groups of tasks
@@ -73,4 +77,8 @@ gulp.task('minify',
 
 gulp.task('production',
 	gulp.series('default', 'minify')
+);
+
+gulp.task('deploy',
+	gulp.series('ssh:clear_remote', 'ssh:upload')
 );
