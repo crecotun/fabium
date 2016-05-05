@@ -1,8 +1,7 @@
 var
 	gulp = require('gulp'),
 	$ = require('gulp-load-plugins')(),
-
-	pngcrush = require('imagemin-pngcrush'),
+	
 	config = require('../config'),
 	consoleError = require('../utils/console_error');
 
@@ -20,9 +19,6 @@ function imagesMin() {
 					{
 						removeViewBox: false
 					}
-				],
-				use: [
-					pngcrush()
 				]
 			})
 		)
