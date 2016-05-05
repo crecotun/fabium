@@ -1,3 +1,6 @@
+### 1.6
+- added `gulp-imagemin` and `gulp-csso`
+
 ### 1.5
 - `deploy` task connects to remove server via ssh, clears folder and uploads files.
 - `archive:built`, `archive:src` — tasks for archive folders with files.
