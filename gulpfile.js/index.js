@@ -23,6 +23,7 @@ var
 	watch = require('./tasks/watch'),
 	bower = require('./tasks/bower'),
 	browsersync = require('./tasks/browsersync'),
+	zip = require('./tasks/zip'),
 
 	// utils
 	consoleError = require('./utils/console_error');
@@ -49,6 +50,9 @@ gulp.task('bower', bower);
 gulp.task('watch', watch);
 
 gulp.task('browsersync', browsersync);
+
+gulp.task('archive:all', zip.zipSrc);
+gulp.task('archive:dist', zip.zipDist);
 
 // ##################################################################################
 // ##### Groups of tasks
