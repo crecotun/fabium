@@ -1,0 +1,14 @@
+{
+	"options": {
+		"host": "",
+		"port": 22,
+		"username": "",
+		"password": ""
+		},
+
+	"server_paths": {
+		"project": {
+			"path": ""
+			}
+		}
+}

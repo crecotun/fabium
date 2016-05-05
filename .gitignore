@@ -1,4 +1,6 @@
 node_modules
 built/
 dist/
+archives/
+gulpfile.js/tasks/ssh/ssh.json
 npm-debug.log

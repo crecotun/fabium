@@ -1,7 +1,10 @@
 {
 	"paths": {
+		"root": "./",
+
 		"src": {
-			"path": "./src/",
+			"path": "./src",
+			"all": "./src/**",
 			"styles": {
 				"all": "./src/assets/styles/**/*.sass",
 				"main": "./src/assets/styles/main.sass",
@@ -34,8 +37,10 @@
 				}
 			}
 		},
+
 		"built": {
-			"path": "./dist/",
+			"path": "./dist",
+			"all": "./dist/**",
 			"styles": {
 				"all": "./dist/assets/styles/**/*.css",
 				"all_minified": "./dist/assets/styles/**/*.min.css",
@@ -57,6 +62,10 @@
 				"all": "./dist/**/*.html"
 			}
 
+		},
+
+		"archives": {
+			"path": "./archives"
 		}
 	}
 }
