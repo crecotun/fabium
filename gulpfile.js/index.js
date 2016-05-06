@@ -25,6 +25,7 @@ var
 	browsersync = require('./tasks/browsersync'),
 	zip = require('./tasks/zip'),
 	ssh = require('./tasks/ssh/ssh'),
+	w3cHTML = require('./tasks/w3c_html'),
 
 	// utils
 	consoleError = require('./utils/console_error');
@@ -58,6 +59,8 @@ gulp.task('archive:dist', zip.zipDist);
 gulp.task('ssh:clear_remote', ssh.clearRemote);
 gulp.task('ssh:upload', ssh.upload);
 
+gulp.task('w3c:html', w3cHTML);
+
 // ##################################################################################
 // ##### Groups of tasks
 // ##################################################################################
@@ -81,4 +84,8 @@ gulp.task('production',
 
 gulp.task('deploy',
 	gulp.series('ssh:clear_remote', 'ssh:upload')
+);
+
+gulp.task('validate',
+	gulp.series('w3c:html')
 );

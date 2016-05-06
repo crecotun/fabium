@@ -1,3 +1,6 @@
+### 1.7
+- w3c html validation via `gulp-w3cjs`
+
 ### 1.6
 - added `gulp-imagemin` and `gulp-csso`
 
