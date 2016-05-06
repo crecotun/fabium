@@ -79,11 +79,11 @@ gulp.task('minify',
 );
 
 gulp.task('production',
-	gulp.series('default', 'minify')
+	gulp.series('default', 'styles:rtl', 'minify')
 );
 
 gulp.task('deploy',
-	gulp.series('ssh:clear_remote', 'ssh:upload')
+	gulp.series('production', 'ssh:clear_remote', 'ssh:upload')
 );
 
 gulp.task('validate',
