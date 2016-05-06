@@ -1,3 +1,6 @@
+### 1.7.1
+- deploy, rlt fixes
+
 ### 1.7
 - w3c html validation via `gulp-w3cjs`
 

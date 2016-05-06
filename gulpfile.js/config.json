@@ -24,6 +24,10 @@
 				"all": "./src/assets/images/**/*.*",
 				"path": "./src/assets/images"
 			},
+			"fonts": {
+				"all": "./src/assets/fonts/**/*.*",
+				"path": "./src/assets/fonts/"
+			},
 			"templates": {
 				"all": "./src/templates/**/*.jade",
 				"path": "./src/templates",
@@ -43,8 +47,13 @@
 			"all": "./dist/**",
 			"styles": {
 				"all": "./dist/assets/styles/**/*.css",
-				"all_minified": "./dist/assets/styles/**/*.min.css",
-				"path": "./dist/assets/styles"
+				"path": "./dist/assets/styles",
+				"minified": {
+					"all": "./dist/assets/styles/**/*.min.css"
+				},
+				"rtl": {
+					"all": "./dist/assets/styles/**/*-rtl.css"
+				}
 			},
 			"scripts": {
 				"all": "./dist/assets/scripts/**/*.js",
@@ -60,12 +69,17 @@
 			},
 			"templates": {
 				"all": "./dist/**/*.html"
+			},
+			"fonts": {
+				"path": "./dist/assets/fonts"
 			}
 
 		},
 
 		"archives": {
-			"path": "./archives"
+			"path": "./archives",
+			"dist": "./archives/project_dist.zip",
+			"src": "./archives/project_src.zip"
 		}
 	}
 }

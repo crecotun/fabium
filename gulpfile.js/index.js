@@ -55,9 +55,12 @@ gulp.task('browsersync', browsersync);
 
 gulp.task('archive:src', zip.zipSrc);
 gulp.task('archive:dist', zip.zipDist);
+gulp.task('archive', gulp.series('archive:src', 'archive:dist'));
 
-gulp.task('ssh:clear_remote', ssh.clearRemote);
+gulp.task('ssh:clean', ssh.clean);
 gulp.task('ssh:upload', ssh.upload);
+gulp.task('ssh:unzip', ssh.unzip);
+gulp.task('ssh', gulp.series('ssh:clean', 'ssh:upload', 'ssh:unzip'));
 
 gulp.task('w3c:html', w3cHTML);
 
@@ -83,7 +86,7 @@ gulp.task('production',
 );
 
 gulp.task('deploy',
-	gulp.series('production', 'ssh:clear_remote', 'ssh:upload')
+	gulp.series('production', 'archive', 'ssh')
 );
 
 gulp.task('validate',

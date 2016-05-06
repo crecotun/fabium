@@ -6,28 +6,40 @@ var
 	consoleError = require('../../utils/console_error'),
 	sshConfig = require('./ssh.json');
 
-function clearRemote() {
+function clean() {
 	var gulpSSH = new $.ssh({
 		sshConfig: sshConfig.options
 	});
 
 	return gulpSSH
-					.exec([
-						'cd ' + sshConfig.server_paths.project.path + ' && rm -rf *'
-					]);
+		.exec([
+			'cd ' + sshConfig.server_paths.project.path + ' && rm -rf *'
+		]);
 }
 
 function upload() {
 	var gulpSSH = new $.ssh({
 		sshConfig: sshConfig.options
 	});
-	return gulp.src(config.paths.built.all)
-					.pipe(
-						gulpSSH.dest( sshConfig.server_paths.project.path )
-					);
+
+	return gulp.src(config.paths.archives.dist)
+		.pipe(
+			gulpSSH.dest( sshConfig.server_paths.project.path )
+		);
+}
+
+function unzip() {
+	var gulpSSH = new $.ssh({
+		sshConfig: sshConfig.options
+	});
+
+	return gulpSSH.exec([
+		'cd ' + sshConfig.server_paths.project.path + ' && unzip project_dist.zip -d . && rm project_dist.zip'
+	]);
 }
 
 module.exports = {
-	clearRemote: clearRemote,
-	upload: upload
+	clean: clean,
+	upload: upload,
+	unzip: unzip
 };
