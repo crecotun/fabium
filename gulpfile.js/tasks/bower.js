@@ -6,7 +6,7 @@ var
 	consoleError = require('../utils/console_error');
 
 function bower() {
-	return $.bower( config.paths.built.libs );
+	return $.bower( config.paths.dist.libs );
 };
 
 module.exports = bower;

@@ -6,7 +6,7 @@ var
 	consoleError = require('../utils/console_error');
 
 function imagesMin() {
-	return gulp.src( [config.paths.built.images.all] )
+	return gulp.src( [config.paths.dist.images.all] )
 		.pipe(
 			$.plumber({
 				errorHandler: consoleError
@@ -22,7 +22,7 @@ function imagesMin() {
 				]
 			})
 		)
-		.pipe( gulp.dest( config.paths.built.images.path ) );
+		.pipe( gulp.dest( config.paths.dist.images.path ) );
 };
 
 module.exports = imagesMin;

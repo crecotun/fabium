@@ -1,3 +1,6 @@
+### 1.8.0
+- Russian readme wip
+
 ### 1.7.1
 - deploy, rlt fixes
 
@@ -9,7 +12,7 @@
 
 ### 1.5
 - `deploy` task connects to remove server via ssh, clears folder and uploads files.
-- `archive:built`, `archive:src` — tasks for archive folders with files.
+- `archive:dist`, `archive:src` — tasks for archive folders with files.
 
 ### 1.4
 - `gulp-rtlcss` support

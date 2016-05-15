@@ -14,7 +14,7 @@ function zipSrc() {
 }
 
 function zipDist() {
-	return gulp.src([config.paths.built.all])
+	return gulp.src([config.paths.dist.all])
 		.pipe( $.zip('project_dist.zip') )
 		.pipe(
 			gulp.dest( config.paths.archives.path )

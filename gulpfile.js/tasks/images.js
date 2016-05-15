@@ -12,7 +12,7 @@ function images() {
 				errorHandler: consoleError
 			})
 		)
-		.pipe( gulp.dest( config.paths.built.images.path ) );
+		.pipe( gulp.dest( config.paths.dist.images.path ) );
 };
 
 module.exports = images;

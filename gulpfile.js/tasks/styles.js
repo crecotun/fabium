@@ -24,7 +24,7 @@ function styles() {
 				]
 			)
 		)
-		.pipe( gulp.dest( config.paths.built.styles.path ) );
+		.pipe( gulp.dest( config.paths.dist.styles.path ) );
 };
 
 module.exports = styles;

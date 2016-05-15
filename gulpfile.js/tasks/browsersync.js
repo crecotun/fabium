@@ -5,7 +5,8 @@ var
 	path = require('path'),
 	browserSync = require('browser-sync'),
 	config = require('../config'),
-	consoleError = require('../utils/console_error');
+	consoleError = require('../utils/console_error'),
+	PORT = process.env.PORT;
 
 function bSync(cb) {
 
@@ -13,17 +14,18 @@ function bSync(cb) {
 		minify: false,
 		injectChanges: true,
 		files: [
-			config.paths.built.styles.all,
-			config.paths.built.scripts.all,
-			config.paths.built.templates.all,
-			config.paths.built.images.all
+			config.paths.dist.styles.all,
+			config.paths.dist.scripts.all,
+			config.paths.dist.templates.all,
+			config.paths.dist.images.all
 		],
 		notify: false,
 		open: false,
+		ui: false,
 		server: {
 			baseDir: path.join(__dirname, '/../../dist')
 		},
-		port: 3000
+		port: PORT || 3000
 	}, cb);
 
 }

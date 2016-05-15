@@ -17,7 +17,7 @@ function scripts() {
 				presets: ['es2015']
 			})
 		)
-		.pipe( gulp.dest( config.paths.built.scripts.path ) );
+		.pipe( gulp.dest( config.paths.dist.scripts.path ) );
 };
 
 module.exports = scripts;

@@ -7,15 +7,15 @@ var
 
 function stylesRTL() {
 	return gulp.src([
-		config.paths.built.styles.all,
-		'!'+config.paths.built.styles.rtl.all,
-		'!'+config.paths.built.styles.minified.all
+		config.paths.dist.styles.all,
+		'!'+config.paths.dist.styles.rtl.all,
+		'!'+config.paths.dist.styles.minified.all
 		])
 		.pipe( $.rtlcss() )
 		.pipe( $.rename({
 			suffix: '-rtl'
 		}) )
-		.pipe( gulp.dest(config.paths.built.styles.path) )
+		.pipe( gulp.dest(config.paths.dist.styles.path) )
 };
 
 module.exports = stylesRTL;

@@ -28,7 +28,7 @@ function templates() {
 			})
 		)
 		.pipe( $.rename({dirname: '.'}) )
-		.pipe( gulp.dest( config.paths.built.path ) );
+		.pipe( gulp.dest( config.paths.dist.path ) );
 };
 
 module.exports = templates;

@@ -6,7 +6,7 @@ var
 	consoleError = require('../utils/console_error');
 
 function stylesMin() {
-	return gulp.src( [config.paths.built.styles.all, '!'+config.paths.built.styles.minified.all] )
+	return gulp.src( [config.paths.dist.styles.all, '!'+config.paths.dist.styles.minified.all] )
 		.pipe(
 			$.plumber({
 				errorHandler: consoleError
@@ -18,7 +18,7 @@ function stylesMin() {
 				path.basename += '.min';
 			})
 		)
-		.pipe( gulp.dest( config.paths.built.styles.path ) );
+		.pipe( gulp.dest( config.paths.dist.styles.path ) );
 };
 
 module.exports = stylesMin;

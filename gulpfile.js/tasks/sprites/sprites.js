@@ -28,7 +28,7 @@ function sprites() {
 		}) );
 
 	var imgStream = spriteData.img
-		.pipe( gulp.dest(config.paths.built.images.path) );
+		.pipe( gulp.dest(config.paths.dist.images.path) );
 
 	var cssStream = spriteData.css
 		.pipe( gulp.dest(config.paths.src.sprites.style) );

@@ -6,7 +6,7 @@ var
 	consoleError = require('../utils/console_error');
 
 function w3cHTML(cb) {
-	return gulp.src(config.paths.built.templates.all)
+	return gulp.src(config.paths.dist.templates.all)
 		.pipe(
 			$.plumber({
 				errorHandler: consoleError

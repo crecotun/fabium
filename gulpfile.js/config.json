@@ -42,7 +42,7 @@
 			}
 		},
 
-		"built": {
+		"dist": {
 			"path": "./dist",
 			"all": "./dist/**",
 			"styles": {
