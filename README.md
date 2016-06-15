@@ -90,7 +90,7 @@ Front-end automated boilerplate
 #### NPM
 - `npm start` — запуск `gulp dev`
 - `npm run prod` — запуск `gulp production`
-- `npm run deploy` — запуск `gulp dev`
+- `npm run deploy` — запуск `gulp deploy`
 - `npm run validate` — запуск `gulp validate`
 - `npm run minify` — запуск `gulp minify`
 
