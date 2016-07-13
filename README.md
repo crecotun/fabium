@@ -88,7 +88,7 @@ Front-end automated boilerplate
 Все задачи запускаются посредством npm scripts.
 
 #### NPM
-- `npm start` — запуск `gulp dev`
+- `npm start` — запуск `gulp dev`. Чтобы запустить browsersync на другом порту, можно писать `PORT=8080 npm start`
 - `npm run prod` — запуск `gulp production`
 - `npm run deploy` — запуск `gulp deploy`
 - `npm run validate` — запуск `gulp validate`
