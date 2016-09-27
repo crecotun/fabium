@@ -10,8 +10,10 @@ function templates() {
 		.pipe(
 			$.if(
 				global.isWatching,
-				$.jadeInheritance({
-					basedir: 'src/templates'
+				$.pugInheritance({
+					basedir: 'src/templates',
+					extension: '.pug',
+					skip: 'node_modules'
 				})
 			)
 		)
@@ -23,7 +25,7 @@ function templates() {
 			)
 		)
 		.pipe(
-			$.jade({
+			$.pug({
 				pretty: true
 			})
 		)

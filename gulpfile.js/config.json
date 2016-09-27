@@ -29,14 +29,14 @@
 				"path": "./src/assets/fonts/"
 			},
 			"templates": {
-				"all": "./src/templates/**/*.jade",
+				"all": "./src/templates/**/*.pug",
 				"path": "./src/templates",
 				"blocks": {
-					"all": "./src/templates/blocks/**/*.jade",
+					"all": "./src/templates/blocks/**/*.pug",
 					"path": "./src/templates/blocks"
 				},
 				"pages": {
-					"all": "./src/templates/pages/**/*.jade",
+					"all": "./src/templates/pages/**/*.pug",
 					"path": "./src/templates/pages"
 				}
 			}
