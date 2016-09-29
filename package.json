@@ -31,9 +31,19 @@
     "gulp-w3cjs": "^1.2.0",
     "gulp-zip": "^3.2.0",
     "gulp.spritesmith": "^6.2.1",
-    "jade": "^1.11.0",
     "merge-stream": "^1.0.0",
-    "pug": "^2.0.0-beta6"
+    "postcss": "^5.2.2",
+    "postcss-comment": "^1.0.3",
+    "postcss-hexrgba": "^0.2.1",
+    "postcss-import": "^8.1.2",
+    "postcss-inline-comment": "^3.0.0",
+    "postcss-inline-svg": "^2.1.2",
+    "postcss-sass-color-functions": "^1.1.0",
+    "postcss-short": "^1.4.0",
+    "postcss-svgo": "^2.1.5",
+    "precss": "^1.4.0",
+    "pug": "^2.0.0-beta6",
+    "sugarss": "^0.1.6"
   },
   "scripts": {
     "gulp": "./node_modules/.bin/gulp",
