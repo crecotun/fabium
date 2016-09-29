@@ -6,8 +6,8 @@
 			"path": "./src",
 			"all": "./src/**",
 			"styles": {
-				"all": "./src/assets/styles/**/*.sass",
-				"main": "./src/assets/styles/main.sass",
+				"all": "./src/assets/styles/**/*.sss",
+				"main": "./src/assets/styles/main.sss",
 				"path": "./src/assets/styles"
 			},
 			"sprites": {

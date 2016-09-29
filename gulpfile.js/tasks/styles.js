@@ -12,7 +12,6 @@ var
 	hexRgba = require('postcss-hexrgba'),
 	inlineSVG = require('postcss-inline-svg'),
 	inlineComment = require('postcss-inline-comment'),
-	comment = require('postcss-comment'),
 	sugarss = require('sugarss'),
 	postcssSVGO = require('postcss-svgo'),
 	shortCSS = require('postcss-short'),
