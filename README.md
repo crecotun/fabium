@@ -7,9 +7,8 @@ Front-end automated boilerplate
 	It looks a bit ugly, but this is the only way to work with 4 ver of gulp until it'll be finally released.
 
 ## So, what do we have under the hood for now?
-- jade -> html
-- sass -> css
-- sprites generation
+- pug -> html
+- postcss -> css
 - browsersync
 - autoprefixer
 - bower
