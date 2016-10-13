@@ -1,3 +1,6 @@
+### 2.1.0
+- Added .editorconfig
+
 ### 2.0.0
 - Sass -> PostCSS (with sugarss parser and precss, postcss-import, postcss-hexrgba, postcss-inline-svg, postcss-inline-comment, postcss-svgo, postcss-short, postcss-sass-color-functions)
 - jade -> pug

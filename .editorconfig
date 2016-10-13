@@ -1,0 +1,18 @@
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+[*.{json, hjson}]
+indent_style = tab
+
+[*.js]
+indent_style = tab
+
+[{*.{sass, scss, styl, sss}]
+indent_style = tab
+
+[*.{php, html, pug, jade}]
+indent_style = tab
