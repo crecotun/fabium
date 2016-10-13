@@ -1,11 +1,11 @@
-html
-body,
+html,
+body
 	height: 100%
 
 body
-	font-family Arial, sans-serif
-	font-size 14px
-	line-height 1.4
+	font-family: Arial, sans-serif
+	font-size: 14px
+	line-height: 1.4
 
 body,
 input,
@@ -16,22 +16,21 @@ textarea
 input,
 button,
 textarea
-	+reset-input()
+	@mixin reset-input
 
 button
-	cursor pointer
-	&::-moz-focus-inner
+	cursor: pointer
 	&::-moz-focus-inner
 		border: 0
 		padding: 0
 
 a
-	text-decoration none
+	text-decoration: none
 
-em
+em,
 i
-	font-style italic
+	font-style: italic
 
-b
+b,
 strong
-	font-weight bold
+	font-weight: bold
