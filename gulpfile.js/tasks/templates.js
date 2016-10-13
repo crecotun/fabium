@@ -1,6 +1,7 @@
 var
 	gulp = require('gulp'),
 	$ = require('gulp-load-plugins')(),
+	path = require('path'),
 
 	config = require('../config'),
 	consoleError = require('../utils/console_error');
