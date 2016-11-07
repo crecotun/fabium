@@ -11,8 +11,8 @@ indent_style = tab
 [*.js]
 indent_style = tab
 
-[{*.{sass, scss, styl, sss}]
+[*.{sass, scss, styl, sss}]
 indent_style = tab
 
-[*.{php, html, pug, jade}]
+[*.php]
 indent_style = tab

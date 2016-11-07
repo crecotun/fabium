@@ -1,3 +1,10 @@
+### 2.2.0
+- removed `bower` task, `bower.json` and `.bowerrc`
+- added webpack
+- removed `scripts:min` task
+- `npm run prod` changed to `npm run production`
+- removed `npm run dev`, now you should use only `npm start`
+
 ### 2.1.0
 - Added .editorconfig
 
