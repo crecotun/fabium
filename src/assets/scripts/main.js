@@ -1,3 +1,5 @@
-(()=>{
-	console.log('Hi there');
-})()
+import $ from 'jquery'
+
+$(document).ready(() => {
+	console.log(1);
+})

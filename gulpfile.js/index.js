@@ -19,9 +19,7 @@ var
 	images = require('./tasks/images'),
 	imagesMin = require('./tasks/images_min'),
 	templates = require('./tasks/templates'),
-	// sprites = require('./tasks/sprites/sprites'),
 	watch = require('./tasks/watch'),
-	bower = require('./tasks/bower'),
 	browsersync = require('./tasks/browsersync'),
 	zip = require('./tasks/zip'),
 	ssh = require('./tasks/ssh/ssh'),
@@ -45,10 +43,6 @@ gulp.task('images:min', imagesMin)
 
 gulp.task('templates', templates);
 
-// gulp.task('sprites', sprites);
-
-gulp.task('bower', bower);
-
 gulp.task('watch', watch);
 
 gulp.task('browsersync', browsersync);
@@ -70,7 +64,7 @@ gulp.task('w3c:html', w3cHTML);
 
 // Run all tasks
 gulp.task('default',
-	gulp.series('bower', 'images', 'styles', 'scripts', 'templates')
+	gulp.series('images', 'styles', 'scripts', 'templates')
 );
 
 gulp.task('dev',
@@ -78,7 +72,7 @@ gulp.task('dev',
 );
 
 gulp.task('minify',
-	gulp.series('images:min', 'styles:min', 'scripts:min')
+	gulp.series('images:min', 'styles:min')
 );
 
 gulp.task('production',
