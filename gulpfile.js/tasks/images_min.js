@@ -1,19 +1,14 @@
-var
-	gulp = require('gulp'),
-	$ = require('gulp-load-plugins')(),
-	
-	config = require('../config'),
-	consoleError = require('../utils/console_error');
+var globals = require('../globals.js')
 
 function imagesMin() {
-	return gulp.src( [config.paths.dist.images.all] )
+	return globals.gulp.src( [globals.config.paths.dist.images.all] )
 		.pipe(
-			$.plumber({
-				errorHandler: consoleError
+			globals.$.plumber({
+				errorHandler: globals.consoleError
 			})
 		)
 		.pipe(
-			$.imagemin({
+			globals.$.imagemin({
 				progressive: true,
 				svgoPlugins: [
 					{
@@ -22,7 +17,9 @@ function imagesMin() {
 				]
 			})
 		)
-		.pipe( gulp.dest( config.paths.dist.images.path ) );
+		.pipe( globals.gulp.dest( globals.config.paths.dist.images.path ) );
 };
+
+globals.gulp.task('images:min', imagesMin)
 
 module.exports = imagesMin;

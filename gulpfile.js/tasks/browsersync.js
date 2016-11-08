@@ -1,12 +1,7 @@
-var
-	gulp = require('gulp'),
-	$ = require('gulp-load-plugins')(),
-
-	path = require('path'),
-	browserSync = require('browser-sync'),
-	config = require('../config'),
-	consoleError = require('../utils/console_error'),
-	PORT = process.env.PORT;
+var globals = require('../globals.js'),
+		path = require('path'),
+		browserSync = require('browser-sync'),
+		PORT = process.env.PORT;
 
 function bSync(cb) {
 
@@ -14,10 +9,10 @@ function bSync(cb) {
 		minify: false,
 		injectChanges: true,
 		files: [
-			config.paths.dist.styles.all,
-			config.paths.dist.scripts.all,
-			config.paths.dist.templates.all,
-			config.paths.dist.images.all
+			globals.config.paths.dist.styles.all,
+			globals.config.paths.dist.scripts.all,
+			globals.config.paths.dist.templates.all,
+			globals.config.paths.dist.images.all
 		],
 		notify: false,
 		open: false,
@@ -29,5 +24,7 @@ function bSync(cb) {
 	}, cb);
 
 }
+
+globals.gulp.task('browsersync', bSync);
 
 module.exports = bSync;

@@ -1,19 +1,16 @@
-var
-	gulp = require('gulp'),
-	$ = require('gulp-load-plugins')(),
-
-	config = require('../config'),
-	consoleError = require('../utils/console_error');
+var globals = require('../globals.js')
 
 function w3cHTML(cb) {
-	return gulp.src(config.paths.dist.templates.all)
+	return globals.gulp.src(globals.config.paths.dist.templates.all)
 		.pipe(
-			$.plumber({
-				errorHandler: consoleError
+			globals.$.plumber({
+				errorHandler: globals.consoleError
 			})
 		)
-		.pipe( $.w3cjs() )
-		.pipe( $.w3cjs.reporter() );
+		.pipe( globals.$.w3cjs() )
+		.pipe( globals.$.w3cjs.reporter() );
 }
+
+globals.gulp.task('w3c:html', w3cHTML);
 
 module.exports = w3cHTML;
