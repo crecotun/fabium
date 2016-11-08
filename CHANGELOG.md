@@ -1,3 +1,6 @@
+### 2.4.0
+- added eslint
+
 ### 2.3.0
 - gulp-hub for tasks loading
 - gulp-newer for `images`
