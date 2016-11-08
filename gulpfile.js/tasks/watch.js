@@ -1,15 +1,14 @@
-var
-	gulp = require('gulp'),
-	$ = require('gulp-load-plugins')(),
-
-	config = require('../config');
+var globals = require('../globals.js')
 
 function watch() {
-	gulp.watch( config.paths.src.scripts.all, gulp.series('scripts') );
-	gulp.watch( config.paths.src.styles.all, gulp.series('styles') );
-	gulp.watch( config.paths.src.images.all, gulp.series('images') );
-	gulp.watch( config.paths.src.sprites.images.all, gulp.series('sprites') );
-	gulp.watch( config.paths.src.templates.all, gulp.series('templates') );
+
+	global.isWatching = true;
+
+	globals.gulp.watch( globals.config.paths.src.styles.all, globals.gulp.series('styles') );
+	globals.gulp.watch( globals.config.paths.src.images.all, globals.gulp.series('images') );
+	globals.gulp.watch( globals.config.paths.src.templates.all, globals.gulp.series('templates') );
 };
+
+globals.gulp.task('watch', watch);
 
 module.exports = watch;

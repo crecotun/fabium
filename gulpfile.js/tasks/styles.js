@@ -1,19 +1,21 @@
-var
-	gulp = require('gulp'),
-	$ = require('gulp-load-plugins')(),
-
-	config = require('../config'),
-	consoleError = require('../utils/console_error');
+var globals = require('../globals.js')
 
 function styles() {
-	return gulp.src( config.paths.src.styles.main, {since: gulp.lastRun('styles')} )
+	return globals.gulp.src( globals.config.paths.src.styles.main )
 		.pipe(
-			$.plumber({
-				errorHandler: consoleError
+			globals.$.plumber({
+				errorHandler: globals.consoleError
 			})
 		)
-		.pipe( $.stylus() )
-		.pipe( gulp.dest( config.paths.built.styles.path ) );
+		.pipe( globals.$.postcss(globals.postcssProcessors, { parser: globals.sugarss } ) )
+		.pipe(
+			globals.$.rename(function(path){
+				path.extname = '.css'
+			})
+		)
+		.pipe( globals.gulp.dest( globals.config.paths.dist.styles.path ) );
 };
+
+globals.gulp.task('styles', styles);
 
 module.exports = styles;

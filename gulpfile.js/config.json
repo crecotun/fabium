@@ -1,10 +1,13 @@
 {
 	"paths": {
+		"root": "./",
+
 		"src": {
-			"path": "./src/",
+			"path": "./src",
+			"all": "./src/**",
 			"styles": {
-				"all": "./src/assets/styles/**/*.styl",
-				"main": "./src/assets/styles/main.styl",
+				"all": "./src/assets/styles/**/*.sss",
+				"main": "./src/assets/styles/main.sss",
 				"path": "./src/assets/styles"
 			},
 			"sprites": {
@@ -21,25 +24,36 @@
 				"all": "./src/assets/images/**/*.*",
 				"path": "./src/assets/images"
 			},
+			"fonts": {
+				"all": "./src/assets/fonts/**/*.*",
+				"path": "./src/assets/fonts/"
+			},
 			"templates": {
-				"all": "./src/templates/**/*.jade",
+				"all": "./src/templates/**/*.pug",
 				"path": "./src/templates",
 				"blocks": {
-					"all": "./src/templates/blocks/**/*.jade",
+					"all": "./src/templates/blocks/**/*.pug",
 					"path": "./src/templates/blocks"
 				},
 				"pages": {
-					"all": "./src/templates/pages/**/*.jade",
+					"all": "./src/templates/pages/**/*.pug",
 					"path": "./src/templates/pages"
 				}
 			}
 		},
-		"built": {
-			"path": "./dist/",
+
+		"dist": {
+			"path": "./dist",
+			"all": "./dist/**",
 			"styles": {
 				"all": "./dist/assets/styles/**/*.css",
-				"all_minified": "./dist/assets/styles/**/*.min.css",
-				"path": "./dist/assets/styles"
+				"path": "./dist/assets/styles",
+				"minified": {
+					"all": "./dist/assets/styles/**/*.min.css"
+				},
+				"rtl": {
+					"all": "./dist/assets/styles/**/*-rtl.css"
+				}
 			},
 			"scripts": {
 				"all": "./dist/assets/scripts/**/*.js",
@@ -55,8 +69,17 @@
 			},
 			"templates": {
 				"all": "./dist/**/*.html"
+			},
+			"fonts": {
+				"path": "./dist/assets/fonts"
 			}
 
+		},
+
+		"archives": {
+			"path": "./archives",
+			"dist": "./archives/project_dist.zip",
+			"src": "./archives/project_src.zip"
 		}
 	}
 }

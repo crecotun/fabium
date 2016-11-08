@@ -1,32 +1,25 @@
-var
-	gulp = require('gulp'),
-	$ = require('gulp-load-plugins')(),
-
-	pngcrush = require('imagemin-pngcrush'),
-	config = require('../config'),
-	consoleError = require('../utils/console_error');
+var globals = require('../globals.js')
 
 function imagesMin() {
-	return gulp.src( [config.paths.built.images.all] )
+	return globals.gulp.src( [globals.config.paths.dist.images.all] )
 		.pipe(
-			$.plumber({
-				errorHandler: consoleError
+			globals.$.plumber({
+				errorHandler: globals.consoleError
 			})
 		)
 		.pipe(
-			$.imagemin({
+			globals.$.imagemin({
 				progressive: true,
 				svgoPlugins: [
 					{
 						removeViewBox: false
 					}
-				],
-				use: [
-					pngcrush()
 				]
 			})
 		)
-		.pipe( gulp.dest( config.paths.built.images.path ) );
+		.pipe( globals.gulp.dest( globals.config.paths.dist.images.path ) );
 };
+
+globals.gulp.task('images:min', imagesMin)
 
 module.exports = imagesMin;

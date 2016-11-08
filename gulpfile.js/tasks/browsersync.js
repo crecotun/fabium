@@ -1,32 +1,30 @@
-var
-	gulp = require('gulp'),
-	$ = require('gulp-load-plugins')(),
+var globals = require('../globals.js'),
+		path = require('path'),
+		browserSync = require('browser-sync'),
+		PORT = process.env.PORT;
 
-	path = require('path'),
-	browserSync = require('browser-sync'),
-	bSync = browserSync.create(),
-	config = require('../config'),
-	consoleError = require('../utils/console_error');
+function bSync(cb) {
 
-function sync() {
-
-	return bSync.init({
+	browserSync({
 		minify: false,
 		injectChanges: true,
 		files: [
-			config.paths.built.styles.all,
-			config.paths.built.scripts.all,
-			config.paths.built.templates.all,
-			config.paths.built.images.all
+			globals.config.paths.dist.styles.all,
+			globals.config.paths.dist.scripts.all,
+			globals.config.paths.dist.templates.all,
+			globals.config.paths.dist.images.all
 		],
 		notify: false,
 		open: false,
+		ui: false,
 		server: {
 			baseDir: path.join(__dirname, '/../../dist')
 		},
-		port: 3000
-	});
+		port: PORT || 3000
+	}, cb);
 
 }
 
-module.exports = sync;
+globals.gulp.task('browsersync', bSync);
+
+module.exports = bSync;

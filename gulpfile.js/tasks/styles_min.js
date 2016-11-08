@@ -1,24 +1,21 @@
-var
-	gulp = require('gulp'),
-	$ = require('gulp-load-plugins')(),
-
-	config = require('../config'),
-	consoleError = require('../utils/console_error');
+var globals = require('../globals.js')
 
 function stylesMin() {
-	return gulp.src( [config.paths.built.styles.all, '!'+config.paths.built.styles.all_minified] )
+	return globals.gulp.src( [globals.config.paths.dist.styles.all, '!'+globals.config.paths.dist.styles.minified.all] )
 		.pipe(
-			$.plumber({
-				errorHandler: consoleError
+			globals.$.plumber({
+				errorHandler: globals.consoleError
 			})
 		)
-		.pipe( $.minifyCss() )
+		.pipe( globals.$.csso() )
 		.pipe(
-			$.rename( function(path) {
+			globals.$.rename( function(path) {
 				path.basename += '.min';
 			})
 		)
-		.pipe( gulp.dest( config.paths.built.styles.path ) );
+		.pipe( globals.gulp.dest( globals.config.paths.dist.styles.path ) );
 };
+
+globals.gulp.task('styles:min', stylesMin);
 
 module.exports = stylesMin;
