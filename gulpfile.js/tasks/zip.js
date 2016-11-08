@@ -1,25 +1,24 @@
-var
-	gulp = require('gulp'),
-	$ = require('gulp-load-plugins')(),
-
-	config = require('../config'),
-	consoleError = require('../utils/console_error');
+var globals = require('../globals.js')
 
 function zipSrc() {
-	return gulp.src([config.paths.src.all])
-		.pipe( $.zip('project_src.zip') )
+	return globals.gulp.src([globals.config.paths.src.all])
+		.pipe( globals.$.zip('project_src.zip') )
 		.pipe(
-			gulp.dest( config.paths.archives.path )
+			globals.gulp.dest( globals.config.paths.archives.path )
 		);
 }
 
 function zipDist() {
-	return gulp.src([config.paths.dist.all])
-		.pipe( $.zip('project_dist.zip') )
+	return globals.gulp.src([globals.config.paths.dist.all])
+		.pipe( globals.$.zip('project_dist.zip') )
 		.pipe(
-			gulp.dest( config.paths.archives.path )
+			globals.gulp.dest( globals.config.paths.archives.path )
 		);
 }
+
+globals.gulp.task('archive:src', zipSrc);
+globals.gulp.task('archive:dist', zipDist);
+globals.gulp.task('archive', globals.gulp.series('archive:src', 'archive:dist'));
 
 module.exports = {
 	zipSrc: zipSrc,

@@ -1,13 +1,8 @@
-var
-	gulp = require('gulp'),
-	$ = require('gulp-load-plugins')(),
-	stream = require('webpack-stream'),
-	webpack = require('webpack'),
-	gulplog = require('gulplog'),
-	webpackConfig = require('../../webpack.config'),
-
-	config = require('../config'),
-	consoleError = require('../utils/console_error');
+var globals = require('../globals.js'),
+		stream = require('webpack-stream'),
+		webpack = require('webpack'),
+		gulplog = require('gulplog'),
+		webpackConfig = require('../../webpack.config')
 
 function scripts(cb) {
 	var firstBuildReady = false;
@@ -27,15 +22,15 @@ function scripts(cb) {
 		}))
 	}
 
-	return gulp.src( config.paths.src.scripts.all, {since: gulp.lastRun('scripts')} )
+	return globals.gulp.src( globals.config.paths.src.scripts.all, {since: globals.gulp.lastRun('scripts')} )
 		.pipe(
-			$.plumber({
-				errorHandler: consoleError
+			globals.$.plumber({
+				errorHandler: globals.consoleError
 			})
 		)
 		.pipe(stream(webpackConfig, webpack, done))
 		.pipe(
-			gulp.dest( config.paths.dist.scripts.path )
+			globals.gulp.dest( globals.config.paths.dist.scripts.path )
 		)
 		.on('data', function() {
 			if (firstBuildReady) {
@@ -43,5 +38,7 @@ function scripts(cb) {
 			}
 		});
 };
+
+globals.gulp.task('scripts', scripts);
 
 module.exports = scripts;

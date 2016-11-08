@@ -1,17 +1,11 @@
-var
-	gulp = require('gulp'),
-	$ = require('gulp-load-plugins')(),
-	path = require('path'),
-
-	config = require('../config'),
-	consoleError = require('../utils/console_error');
+var globals = require('../globals.js')
 
 function templates() {
-	return gulp.src( config.paths.src.templates.all, {since: gulp.lastRun('templates')} )
+	return globals.gulp.src( globals.config.paths.src.templates.all, {since: globals.gulp.lastRun('templates')} )
 		.pipe(
-			$.if(
+			globals.$.if(
 				global.isWatching,
-				$.pugInheritance({
+				globals.$.pugInheritance({
 					basedir: 'src/templates',
 					extension: '.pug',
 					skip: 'node_modules'
@@ -19,19 +13,21 @@ function templates() {
 			)
 		)
 		.pipe(
-			$.filter(
+			globals.$.filter(
 				function(file) {
 					return /[\\\/]pages/.test(file.path);
 				}
 			)
 		)
 		.pipe(
-			$.pug({
+			globals.$.pug({
 				pretty: true
 			})
 		)
-		.pipe( $.rename({dirname: '.'}) )
-		.pipe( gulp.dest( config.paths.dist.path ) );
+		.pipe( globals.$.rename({dirname: '.'}) )
+		.pipe( globals.gulp.dest( globals.config.paths.dist.path ) );
 };
+
+globals.gulp.task('templates', templates);
 
 module.exports = templates;
