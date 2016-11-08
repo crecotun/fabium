@@ -41,13 +41,13 @@ module.exports = {
 	},
 
 	module: {
-		// preLoaders: [
-		// 	{
-		// 		test: /\.js$/,
-		// 		loaders: ['eslint'],
-		// 		exclude: /(node_modules|bower_components|formValidation)/,
-		// 	}
-		// ],
+		preLoaders: [
+			{
+				test: /\.js$/,
+				loader: 'eslint-loader',
+				exclude: /(node_modules|bower_components)/,
+			}
+		],
 
 		loaders: [
 			{
