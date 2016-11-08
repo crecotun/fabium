@@ -1,12 +1,8 @@
 var gulp = require('gulp'),
 		HubRegistry = require('gulp-hub'),
-		hub = HubRegistry(['./tasks/**/*.js'])
+		hub = HubRegistry(['./tasks/**/*.js', '!./tasks/_**/*.js'])
 
 gulp.registry(hub)
-
-// ##################################################################################
-// ##### Groups of tasks
-// ##################################################################################
 
 gulp.task('default',
 	gulp.series('images', 'styles', 'scripts', 'templates')

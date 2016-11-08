@@ -1,3 +1,9 @@
+### 2.3.0
+- gulp-hub for tasks loading
+- gulp-newer for `images`
+- `tasks/zip.js` -> `tasks/archive.js`
+- grouped tasks moved to `tasks/task_groups.js`
+
 ### 2.2.0
 - removed `bower` task, `bower.json` and `.bowerrc`
 - added webpack
