@@ -58,11 +58,7 @@ module.exports = {
 			{
 				test: /\.js?$/,
 				exclude: /(node_modules|bower_components|formValidation)/,
-				loader: 'babel',
-				query: {
-					presets: ['es2015', 'stage-2']
-				},
-				plugins: ['transform-runtime']
+				loader: 'babel'
 			},
 			{
 				test: /\.json$/,
