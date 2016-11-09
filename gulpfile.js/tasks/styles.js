@@ -1,13 +1,37 @@
-var globals = require('../globals.js')
+var globals = require('../globals.js'),
+		sugarss = require('sugarss'),
+		syntax = require('postcss-scss')
+
+var postcssPlugins = [
+	require('postcss-import'),
+	require('precss'),
+	require('postcss-inline-svg'),
+	require('postcss-assets')({
+		basePath: './assets/',
+		loadPaths: ['images/', 'fonts/']
+	}),
+	require('postcss-svgo'),
+	require('postcss-hexrgba'), // rucksack
+	require('postcss-sass-color-functions'),
+	require('postcss-short'),
+	require('autoprefixer')({
+		browsers: ['last 2 versions'],
+		cascade: false
+	})
+];
 
 function styles() {
 	return globals.gulp.src( globals.config.paths.src.styles.main )
 		.pipe(
-			globals.$.plumber({
-				errorHandler: globals.consoleError
+			globals.$.plumber(function(error) {
+				console.log( error.message )
+				this.emit('end');
 			})
 		)
-		.pipe( globals.$.postcss(globals.postcssProcessors, { parser: globals.sugarss } ) )
+		.pipe( globals.$.postcss(postcssPlugins, {
+			syntax: syntax,
+			parser: sugarss
+		 } ) )
 		.pipe(
 			globals.$.rename(function(path){
 				path.extname = '.css'
