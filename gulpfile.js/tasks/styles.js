@@ -1,8 +1,8 @@
 var globals = require('../globals.js'),
-		sugarss = require('sugarss')
+		sugarss = require('sugarss'),
+		syntax = require('postcss-scss')
 
 var postcssPlugins = [
-	require('postcss-inline-comment'),
 	require('postcss-import'),
 	require('precss'),
 	require('postcss-inline-svg'),
@@ -28,7 +28,10 @@ function styles() {
 				this.emit('end');
 			})
 		)
-		.pipe( globals.$.postcss(postcssPlugins, { parser: sugarss } ) )
+		.pipe( globals.$.postcss(postcssPlugins, {
+			syntax: syntax,
+			parser: sugarss
+		 } ) )
 		.pipe(
 			globals.$.rename(function(path){
 				path.extname = '.css'

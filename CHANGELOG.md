@@ -1,3 +1,8 @@
+### 2.5.1
+- styles task cleanup
+- removed `postcss-inline-comment`
+- added `postcss-scss`
+
 ### 2.5.0
 - moved PostCSS plugins list from globals to tasks/styles.js
 - prevent falling gulp watch when postcss catch an error, by adding `this.emit('end');` to plumber handler

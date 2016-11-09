@@ -30,7 +30,7 @@ Front-end automated boilerplate
 * [TODO](#TODO)
 
 ## Для чего все это?
-Этот шаблон, в первую очередь, предназначен для автоматизации рутинных задач в процессе верстки. Он не подойдет для разработки приложений на ReactJS или Angular, но отлично потянет простую верстку с вкраплениями JavaScript функционала.
+Этот шаблон, в первую очередь, предназначен для автоматизации рутинных задач в процессе верстки.
 
 Шаблон собран на основе моего опыта и потребностей, поэтому я не обещаю, что он может быть полезен вам в первоначальном виде, но его можно использовать как наглядный пример и дорабатывать под свои нужды.
 
@@ -45,18 +45,30 @@ Front-end automated boilerplate
 ### Автоматизированные задачи
 - Компиляция es2015
 - Компиляция [Jade](http://jade-lang.com/)-шаблонов
-- Компиляция Sass
-- Сборка спрайтов и генерация стиля для них. Я писал [статью](http://habrahabr.ru/post/227945/) о том, как это все работает.
+- PostCSS с синтаксисом sugarss
 - Добавление вендорных префиксов к свойствам
 - Минификация css и js
 - Оптимизация картинок
 - авто-обновление браузера
 - подготовка стилей `rtl`
-- загрузка зависимостей js через bower
+- загрузка зависимостей js через npm
 - загрузка файлов на сервер по ssh
 - Валидация html на w3c
 - архивирование файлов `dist` и `src` папок
 - слежение за изменениями файлов
+
+### PostCSS plugins
+- sugarss
+- postcss-scss
+- postcss-import
+- precss
+- postcss-inline-svg
+- postcss-assets
+- postcss-svgo
+- postcss-hexrgba
+- postcss-sass-color-functions
+- postcss-short
+- autoprefixer
 
 ### Файловая структура
 
@@ -88,7 +100,7 @@ Front-end automated boilerplate
 
 #### NPM
 - `npm start` — запуск `gulp dev`. Чтобы запустить browsersync на другом порту, можно писать `PORT=8080 npm start`
-- `npm run prod` — запуск `gulp production`
+- `npm run production` — запуск `gulp production`
 - `npm run deploy` — запуск `gulp deploy`
 - `npm run validate` — запуск `gulp validate`
 - `npm run minify` — запуск `gulp minify`
@@ -105,7 +117,6 @@ Front-end automated boilerplate
 - `images:min` — оптимизация картинок в `dist`
 - `templates` — компиляция jade-шаблонов
 - `sprites` — сборка спрайтов
-- `bower` — загрузка bower зависимостей
 - `watch` — слежение за изменениями файлов
 - `browsersync` — автообновление в браузере
 - `archive` — архивация `dist` и `src` папок
