@@ -81,5 +81,27 @@
 			"dist": "./archives/project_dist.zip",
 			"src": "./archives/project_src.zip"
 		}
+	},
+
+	"plop": {
+		"placeholders": {
+			"append": "\n// APPEND HERE"
+		},
+		"styles": {
+			"component": {
+				"paths": {
+					"default": "src/assets/styles/components/{{snakeCase name}}/{{snakeCase name}}.sss",
+					"responsive": "src/assets/styles/components/{{snakeCase name}}/{{snakeCase name}}-responsive.sss"
+				},
+				"templates": {
+					"default": "gulpfile.js/templates/styles/component.sss",
+					"responsive": "gulpfile.js/templates/styles/component-responsive.sss"
+				}
+			},
+			"mixin": {
+				"path": "src/assets/styles/mixins/{{snakeCase name}}.sss",
+				"template": "gulpfile.js/templates/mixin/mixin.sss"
+			}
+		}
 	}
 }
