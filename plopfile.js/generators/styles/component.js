@@ -1,23 +1,19 @@
-var config = require('./gulpfile.js/config.json')
+var isntEmpty = require('../../utils/isnt_empty')
 
-module.exports = function (plop) {
-
-	plop.setGenerator('styles:component', {
-		description: 'Component\'s name',
+module.exports = function(config) {
+	return {
+		description: 'Create a new component\'s style file',
 		prompts: [
 			{
 				type: 'input',
 				name: 'name',
 				message: 'Component\'s name',
-				validate: function (value) {
-						if ((/.+/).test(value)) { return true; }
-						return 'name is required';
-				}
+				validate: isntEmpty
 			},
 			{
 				type: 'list',
 				name: 'responsive',
-				message: "Do you want to create a responsive file for this component?",
+				message: "Responsive file?",
 				default: true,
 				choices: [
 					{name: "Yes", value: true},
@@ -63,20 +59,5 @@ module.exports = function (plop) {
 			return actions
 
 		}
-	});
-
-	plop.setGenerator('styles:mixin', {
-
-	})
-
-};
-
-// styles:component
-// styles:component:responsive
-// styles:mixin
-// styles:common
-//
-// templates:component
-// templates:layout
-// templates:page
-// templates:partials
+	}
+}

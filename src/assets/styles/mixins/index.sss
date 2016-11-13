@@ -1,62 +1,7 @@
-// useful
-@define-mixin cut-text
-	overflow: hidden
-	white-space: nowrap
-	text-overflow: ellipsis
-
-@define-mixin clearfix
-	&:after
-		content: ""
-		display: table
-		clear: both
-
-@define-mixin reset-input
-	border: 0
-	padding: 0
-	margin: 0
-	outline: none
-	background: none
-
-// center block when poa+t50%+l50%
-@define-mixin center
-	position: absolute
-	top: 50%
-	left: 50%
-	transform: translate(-50%, -50%)
-
-// font icon
-@define-mixin fontIcon
-	display: inline-block
-	font-family: "icons"
-	font-style: normal
-	font-weight: normal
-	font-variant: normal
-	line-height: 1
-	text-decoration: inherit
-	text-rendering: optimizeLegibility
-	text-transform: none
-	-moz-osx-font-smoothing: grayscale
-	-webkit-font-smoothing: antialiased
-	font-smoothing: antialiased
-
-// generateButtonStyles
-@define-mixin generateButtonStyles $className, $color, $textColorHover = #fff
-	&.-$className
-		&
-			&
-				background-color: $color
-				color: #fff
-
-			&:hover
-				background-color: darken($color, 10%)
-
-		&.-bordered
-			&
-				background-color: transparent
-				color: $color
-				border-color: $color
-
-			&:hover
-				background-color: darken($color, 10%)
-				border-color: darken($color, 10%)
-				color: #fff
+@import "./cut_text.sss"
+@import "./clearfix.sss"
+@import "./reset_input.sss"
+@import "./center.sss"
+@import "./font_icon.sss"
+@import "./generate_button_styles.sss"
+//---------- Append Here ----------//
