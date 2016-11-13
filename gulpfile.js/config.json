@@ -102,6 +102,21 @@
 				"path": "./src/assets/styles/mixins/{{snakeCase name}}.sss",
 				"template": "./plopfile.js/templates/styles/mixin.sss"
 			}
+		},
+
+		"templates": {
+			"component": {
+				"path": "./src/templates/components/{{snakeCase name}}/{{snakeCase name}}.pug",
+				"template": "./plopfile.js/templates/templates/component.pug"
+			},
+			"page": {
+				"path": "./src/templates/pages/{{snakeCase name}}.pug",
+				"template": "./plopfile.js/templates/templates/page.pug"
+			},
+			"layout": {
+				"path": "./src/templates/layouts/{{snakeCase name}}.pug",
+				"template": "./plopfile.js/templates/templates/layout.pug"
+			}
 		}
 	}
 }
