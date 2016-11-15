@@ -1,6 +1,6 @@
 {
   "name": "fabium",
-  "version": "2.5.1",
+  "version": "2.6.0",
   "description": "front-end boilerplate for fast project start",
   "main": "gulpfile.js",
   "dependencies": {
@@ -47,6 +47,7 @@
     "gulplog": "^1.0.0",
     "json-loader": "^0.5.4",
     "merge-stream": "^1.0.0",
+    "plop": "^1.6.0",
     "postcss": "^5.2.2",
     "postcss-assets": "^4.1.0",
     "postcss-comment": "^1.0.3",
@@ -66,6 +67,7 @@
   },
   "scripts": {
     "gulp": "./node_modules/.bin/gulp",
+    "add": "./node_modules/.bin/plop",
     "start": "npm run gulp dev",
     "production": "NODE_ENV=production npm run gulp production",
     "deploy": "npm run gulp deploy",

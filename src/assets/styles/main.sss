@@ -1,12 +1,19 @@
-@import 'helpers/reset.sss'
-@import 'helpers/mixins.sss'
+@import "mixins/index.sss"
+
+//---------- Common: Start ----------//
+
+@import "common/reset.sss"
+@import "common/viewports.sss"
+@import "common/variables.sss"
+@import "common/base.sss"
+
+//----------  Common: End  ----------//
 
 
-// @import 'common/sprite.sss'
-@import 'common/variables.sss'
-@import 'common/base.sss'
+//---------- Components: Start ----------//
 
+// header
+@import "components/header/header.sss"
+@import "components/header/header-responsive.sss"
 
-@import 'components/header.sss'
-@import 'components/nav.sss'
-@import 'components/nav.sss'
+//----------  Components: End  ----------//

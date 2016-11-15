@@ -81,5 +81,42 @@
 			"dist": "./archives/project_dist.zip",
 			"src": "./archives/project_src.zip"
 		}
+	},
+
+	"plop": {
+		"placeholders": {
+			"append": "\n// APPEND HERE"
+		},
+		"styles": {
+			"component": {
+				"paths": {
+					"default": "./src/assets/styles/components/{{snakeCase name}}/{{snakeCase name}}.sss",
+					"responsive": "./src/assets/styles/components/{{snakeCase name}}/{{snakeCase name}}-responsive.sss"
+				},
+				"templates": {
+					"default": "./plopfile.js/templates/styles/component.sss",
+					"responsive": "./plopfile.js/templates/styles/component-responsive.sss"
+				}
+			},
+			"mixin": {
+				"path": "./src/assets/styles/mixins/{{snakeCase name}}.sss",
+				"template": "./plopfile.js/templates/styles/mixin.sss"
+			}
+		},
+
+		"templates": {
+			"component": {
+				"path": "./src/templates/components/{{snakeCase name}}/{{snakeCase name}}.pug",
+				"template": "./plopfile.js/templates/templates/component.pug"
+			},
+			"page": {
+				"path": "./src/templates/pages/{{snakeCase name}}.pug",
+				"template": "./plopfile.js/templates/templates/page.pug"
+			},
+			"layout": {
+				"path": "./src/templates/layouts/{{snakeCase name}}.pug",
+				"template": "./plopfile.js/templates/templates/layout.pug"
+			}
+		}
 	}
 }
