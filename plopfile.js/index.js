@@ -9,9 +9,3 @@ module.exports = function (plop) {
 	plop.setGenerator('templates:component', require('./generators/templates/component.js')(config))
 
 };
-
-// styles:mixin
-// styles:common
-//
-// templates:layout
-// templates:partials

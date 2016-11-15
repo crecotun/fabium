@@ -14,6 +14,7 @@ Front-end automated boilerplate
 - bower
 - es2015 compilation
 - watch 'n compile
+- generator for styles and templates
 
 Автоматизированный шаблон для быстрого старта front-end разработки
 
@@ -56,6 +57,7 @@ Front-end automated boilerplate
 - Валидация html на w3c
 - архивирование файлов `dist` и `src` папок
 - слежение за изменениями файлов
+- автоматическая генерация файлов стилей и шаблонов
 
 ### PostCSS plugins
 - sugarss
@@ -104,6 +106,7 @@ Front-end automated boilerplate
 - `npm run deploy` — запуск `gulp deploy`
 - `npm run validate` — запуск `gulp validate`
 - `npm run minify` — запуск `gulp minify`
+- `npm run add` — запуск генератора файлов
 
 #### Gulp
 

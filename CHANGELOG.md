@@ -1,3 +1,12 @@
+### 2.6.0
+- added files generator `plop`. `npm run add`
+- generator form component's style + responsive
+- generator for style mixin
+- generator for pages
+- generator for component's template
+- added section for `plop` in config
+- each style mixin in separate file
+
 ### 2.5.1
 - styles task cleanup
 - removed `postcss-inline-comment`
