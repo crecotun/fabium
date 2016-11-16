@@ -1,10 +1,11 @@
 {
   "name": "fabium",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "description": "front-end boilerplate for fast project start",
   "main": "gulpfile.js",
   "dependencies": {
-    "jquery": "^3.1.1"
+    "jquery": "^3.1.1",
+    "stylelint": "^7.5.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.7",

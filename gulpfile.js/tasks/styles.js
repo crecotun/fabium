@@ -1,9 +1,14 @@
 var globals = require('../globals.js'),
 		sugarss = require('sugarss'),
-		syntax = require('postcss-scss')
+		syntax = require('postcss-scss'),
+		stylelint = require('stylelint')
 
 var postcssPlugins = [
-	require('postcss-import'),
+	require('postcss-import')({
+		plugins: [
+			stylelint
+		]
+	}),
 	require('precss'),
 	require('postcss-inline-svg'),
 	require('postcss-assets')({
@@ -17,7 +22,8 @@ var postcssPlugins = [
 	require('autoprefixer')({
 		browsers: ['last 2 versions'],
 		cascade: false
-	})
+	}),
+	require("postcss-reporter")({ clearMessages: true })
 ];
 
 function styles() {
