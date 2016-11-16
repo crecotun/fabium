@@ -58,6 +58,7 @@ Front-end automated boilerplate
 - архивирование файлов `dist` и `src` папок
 - слежение за изменениями файлов
 - генерация файлов стилей и шаблонов
+- stylelint
 
 ### PostCSS plugins
 - sugarss

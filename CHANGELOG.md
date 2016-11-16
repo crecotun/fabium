@@ -1,3 +1,7 @@
+### 2.7.0
+- added stylelint
+- added `postcss-reporter`
+
 ### 2.6.0
 - added files generator `plop`. `npm run add`
 - generator form component's style + responsive
