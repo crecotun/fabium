@@ -8,6 +8,7 @@
 			"styles": {
 				"all": "src/assets/styles/**/*.sss",
 				"main": "src/assets/styles/main.sss",
+				"mixins": "src/assets/styles/mixins/index.sss",
 				"path": "src/assets/styles"
 			},
 			"scripts": {
@@ -24,13 +25,14 @@
 			"templates": {
 				"all": "src/templates/**/*.pug",
 				"path": "src/templates",
-				"blocks": {
-					"all": "src/templates/blocks/**/*.pug",
-					"path": "src/templates/blocks"
+				"components": {
+					"all": "src/templates/components/**/*.pug",
+					"path": "src/templates/components"
 				},
 				"pages": {
 					"all": "src/templates/pages/**/*.pug",
-					"path": "src/templates/pages"
+					"path": "src/templates/pages",
+					"index": "src/templates/pages/index.pug"
 				}
 			}
 		},
@@ -83,32 +85,32 @@
 		"styles": {
 			"component": {
 				"paths": {
-					"default": "./src/assets/styles/components/{{snakeCase name}}/{{snakeCase name}}.sss",
-					"responsive": "./src/assets/styles/components/{{snakeCase name}}/{{snakeCase name}}-responsive.sss"
+					"default": "src/assets/styles/components/{{snakeCase name}}/{{snakeCase name}}.sss",
+					"responsive": "src/assets/styles/components/{{snakeCase name}}/{{snakeCase name}}-responsive.sss"
 				},
 				"templates": {
-					"default": "./plopfile.js/templates/styles/component.sss",
-					"responsive": "./plopfile.js/templates/styles/component-responsive.sss"
+					"default": "plopfile.js/templates/styles/component.sss",
+					"responsive": "plopfile.js/templates/styles/component-responsive.sss"
 				}
 			},
 			"mixin": {
-				"path": "./src/assets/styles/mixins/{{snakeCase name}}.sss",
-				"template": "./plopfile.js/templates/styles/mixin.sss"
+				"path": "src/assets/styles/mixins/{{snakeCase name}}.sss",
+				"template": "plopfile.js/templates/styles/mixin.sss"
 			}
 		},
 
 		"templates": {
 			"component": {
-				"path": "./src/templates/components/{{snakeCase name}}/{{snakeCase name}}.pug",
-				"template": "./plopfile.js/templates/templates/component.pug"
+				"path": "src/templates/components/{{snakeCase name}}/{{snakeCase name}}.pug",
+				"template": "plopfile.js/templates/templates/component.pug"
 			},
 			"page": {
-				"path": "./src/templates/pages/{{snakeCase name}}.pug",
-				"template": "./plopfile.js/templates/templates/page.pug"
+				"path": "src/templates/pages/{{snakeCase name}}.pug",
+				"template": "plopfile.js/templates/templates/page.pug"
 			},
 			"layout": {
-				"path": "./src/templates/layouts/{{snakeCase name}}.pug",
-				"template": "./plopfile.js/templates/templates/layout.pug"
+				"path": "src/templates/layouts/{{snakeCase name}}.pug",
+				"template": "plopfile.js/templates/templates/layout.pug"
 			}
 		}
 	}

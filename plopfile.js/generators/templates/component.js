@@ -1,4 +1,6 @@
 var isntEmpty = require('../../utils/isnt_empty')
+var path = require('path')
+var getPath = require( path.resolve(process.env.PWD, 'gulpfile.js/utils/get_path.js') )
 
 module.exports = function(config) {
 	return {
@@ -14,7 +16,7 @@ module.exports = function(config) {
 		actions: [
 			{
 				type: 'add',
-				path: config.plop.templates.component.path
+				path: getPath( config.plop.templates.component.path )
 			}
 		]
 	}

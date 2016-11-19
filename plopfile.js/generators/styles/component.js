@@ -1,4 +1,6 @@
 var isntEmpty = require('../../utils/isnt_empty')
+var path = require('path')
+var getPath = require( path.resolve(process.env.PWD, 'gulpfile.js/utils/get_path.js') )
 
 module.exports = function(config) {
 	return {
@@ -27,8 +29,8 @@ module.exports = function(config) {
 			var actions = [
 				{
 					type: 'add',
-					path: config.plop.styles.component.paths.default,
-					templateFile: config.plop.styles.component.templates.default
+					path: getPath( config.plop.styles.component.paths.default ),
+					templateFile: getPath( config.plop.styles.component.templates.default )
 				}
 			]
 
@@ -36,8 +38,8 @@ module.exports = function(config) {
 				actions = actions.concat([
 					{
 						type: 'add',
-						path: config.plop.styles.component.paths.responsive,
-						templateFile: config.plop.styles.component.templates.responsive
+						path: getPath( config.plop.styles.component.paths.responsive ),
+						templateFile: getPath( config.plop.styles.component.templates.responsive )
 					}
 				])
 			}
@@ -45,7 +47,7 @@ module.exports = function(config) {
 			actions = actions.concat([
 				{
 					type: 'modify',
-					path: 'src/assets/styles/main.sss',
+					path: getPath( config.paths.src.styles.main ),
 					pattern: componentsReplace,
 					template:
 						'// {{snakeCase name}}\n'+
