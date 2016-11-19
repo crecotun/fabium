@@ -1,6 +1,6 @@
 {
   "name": "fabium",
-  "version": "2.7.0",
+  "version": "2.8.0",
   "description": "front-end boilerplate for fast project start",
   "main": "gulpfile.js",
   "dependencies": {
