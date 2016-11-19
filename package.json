@@ -1,6 +1,6 @@
 {
   "name": "fabium",
-  "version": "2.8.0",
+  "version": "2.8.1",
   "description": "front-end boilerplate for fast project start",
   "main": "gulpfile.js",
   "dependencies": {
@@ -68,7 +68,7 @@
   },
   "scripts": {
     "gulp": "./node_modules/.bin/gulp",
-    "add": "./node_modules/.bin/plop",
+    "add": "./node_modules/.bin/plop --plopfile ./plopfile.js/index.js",
     "start": "npm run gulp dev",
     "production": "NODE_ENV=production npm run gulp production",
     "deploy": "npm run gulp deploy",

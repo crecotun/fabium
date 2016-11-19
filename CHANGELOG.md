@@ -1,3 +1,6 @@
+### 2.8.1
+- set a plopfile option for task `npm run add`
+
 ### 2.8.0
 - added util `globals.getPath()`, to drop relative paths in config file
 - added npm task `archive` which calls `gulp archive`
