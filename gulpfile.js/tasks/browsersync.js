@@ -3,22 +3,24 @@ var globals = require('../globals.js'),
 		browserSync = require('browser-sync'),
 		PORT = process.env.PORT;
 
+var files = [
+	globals.getPath( globals.config.paths.dist.styles.all ),
+	globals.getPath( globals.config.paths.dist.scripts.all ),
+	globals.getPath( globals.config.paths.dist.templates.all ),
+	globals.getPath( globals.config.paths.dist.images.all )
+]
+
 function bSync(cb) {
 
 	browserSync({
 		minify: false,
 		injectChanges: true,
-		files: [
-			globals.config.paths.dist.styles.all,
-			globals.config.paths.dist.scripts.all,
-			globals.config.paths.dist.templates.all,
-			globals.config.paths.dist.images.all
-		],
+		files: files,
 		notify: false,
 		open: false,
 		ui: false,
 		server: {
-			baseDir: path.join(__dirname, '/../../dist')
+			baseDir: globals.getPath( globals.config.paths.dist.path )
 		},
 		port: PORT || 3000
 	}, cb);

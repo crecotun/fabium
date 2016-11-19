@@ -1,7 +1,9 @@
 var isntEmpty = require('../../utils/isnt_empty')
+var path = require('path')
+var getPath = require( path.resolve(process.env.PWD, 'gulpfile.js/utils/get_path.js') )
 
 module.exports = function(config) {
-	var mixinsReplace = "//---------- Append Here ----------//"
+	var mixinsReplace = "/*---------- Append Here ----------*/"
 	return {
 		description: 'Create a new mixin',
 		prompts: [
@@ -15,12 +17,12 @@ module.exports = function(config) {
 		actions: [
 			{
 				type: 'add',
-				path: config.plop.styles.mixin.path,
-				templateFile: config.plop.styles.mixin.template
+				path: getPath( config.plop.styles.mixin.path ),
+				templateFile: getPath( config.plop.styles.mixin.template )
 			},
 			{
 				type: 'modify',
-				path: 'src/assets/styles/mixins/index.sss',
+				path: getPath( config.paths.src.styles.mixins ),
 				pattern: mixinsReplace,
 				template:
 					'@import "./{{snakeCase name}}.sss"\n'+

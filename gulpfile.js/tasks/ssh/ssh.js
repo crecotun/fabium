@@ -17,7 +17,9 @@ function upload() {
 		sshConfig: ssh.config.options
 	});
 
-	return globals.gulp.src(globals.config.paths.archives.dist)
+	var src = globals.getPath( globals.config.paths.archives.dist )
+
+	return globals.gulp.src( src )
 		.pipe(
 			gulpSSH.dest( ssh.config.server_paths.project.path )
 		);

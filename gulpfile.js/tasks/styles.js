@@ -26,8 +26,11 @@ var postcssPlugins = [
 	require("postcss-reporter")({ clearMessages: true })
 ];
 
+var src = globals.getPath( globals.config.paths.src.styles.main ),
+		dest = globals.getPath( globals.config.paths.dist.styles.path )
+
 function styles() {
-	return globals.gulp.src( globals.config.paths.src.styles.main )
+	return globals.gulp.src( src )
 		.pipe(
 			globals.$.plumber(function(error) {
 				console.log( error.message )
@@ -43,7 +46,7 @@ function styles() {
 				path.extname = '.css'
 			})
 		)
-		.pipe( globals.gulp.dest( globals.config.paths.dist.styles.path ) );
+		.pipe( globals.gulp.dest( dest ) );
 };
 
 globals.gulp.task('styles', styles);

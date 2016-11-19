@@ -4,6 +4,9 @@ var globals = require('../globals.js'),
 		gulplog = require('gulplog'),
 		webpackConfig = require('../../webpack.config')
 
+var src = globals.getPath( globals.config.paths.src.scripts.all ),
+		dest = globals.getPath( globals.config.paths.dist.scripts.path )
+
 function scripts(cb) {
 	var firstBuildReady = false;
 
@@ -22,7 +25,7 @@ function scripts(cb) {
 		}))
 	}
 
-	return globals.gulp.src( globals.config.paths.src.scripts.all, {since: globals.gulp.lastRun('scripts')} )
+	return globals.gulp.src( src, {since: globals.gulp.lastRun('scripts')} )
 		.pipe(
 			globals.$.plumber({
 				errorHandler: globals.consoleError
@@ -30,7 +33,7 @@ function scripts(cb) {
 		)
 		.pipe(stream(webpackConfig, webpack, done))
 		.pipe(
-			globals.gulp.dest( globals.config.paths.dist.scripts.path )
+			globals.gulp.dest( dest )
 		)
 		.on('data', function() {
 			if (firstBuildReady) {

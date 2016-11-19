@@ -1,3 +1,7 @@
+### 2.8.0
+- added util `globals.getPath()`, to drop relative paths in config file
+- added npm task `archive` which calls `gulp archive`
+
 ### 2.7.0
 - added stylelint
 - added `postcss-reporter`

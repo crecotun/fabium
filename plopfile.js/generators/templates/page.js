@@ -1,4 +1,6 @@
 var isntEmpty = require('../../utils/isnt_empty')
+var path = require('path')
+var getPath = require( path.resolve(process.env.PWD, 'gulpfile.js/utils/get_path.js') )
 
 module.exports = function(config) {
 	var pageReplace = "//- Append Pages Here"
@@ -16,12 +18,12 @@ module.exports = function(config) {
 		actions: [
 			{
 				type: 'add',
-				path: config.plop.templates.page.path
+				path: getPath( config.plop.templates.page.path )
 			},
 			{
 				type: 'modify',
 				pattern: pageReplace,
-				path: './src/templates/pages/index.pug',
+				path: getPath( config.paths.src.templates.pages.index ),
 				template:
 					"li: a(href='./{{snakeCase name}}.html') {{titleCase name}}\n"+
 					"\t\t\t\t"+

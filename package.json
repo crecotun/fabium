@@ -1,6 +1,6 @@
 {
   "name": "fabium",
-  "version": "2.7.0",
+  "version": "2.8.0",
   "description": "front-end boilerplate for fast project start",
   "main": "gulpfile.js",
   "dependencies": {
@@ -73,11 +73,12 @@
     "production": "NODE_ENV=production npm run gulp production",
     "deploy": "npm run gulp deploy",
     "validate": "npm run gulp validate",
-    "minify": "npm run gulp minify"
+    "minify": "npm run gulp minify",
+		"archive": "npm run gulp archive"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Krekotun/fabium.git"
+    "url": "https://github.com/fabium/fabium.git"
   },
   "keywords": [
     "front-end",
@@ -87,7 +88,7 @@
   "author": "Krekotun",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Krekotun/fabium/issues"
+    "url": "https://github.com/fabium/fabium/issues"
   },
-  "homepage": "https://github.com/Krekotun/fabium"
+  "homepage": "https://github.com/fabium/fabium"
 }

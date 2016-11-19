@@ -1,7 +1,10 @@
 var globals = require('../globals.js')
 
+var src = globals.getPath( globals.config.paths.src.templates.all ),
+		dest = globals.getPath( globals.config.paths.dist.path )
+
 function templates() {
-	return globals.gulp.src( globals.config.paths.src.templates.all, {since: globals.gulp.lastRun('templates')} )
+	return globals.gulp.src( src, {since: globals.gulp.lastRun('templates')} )
 		.pipe(
 			globals.$.if(
 				global.isWatching,
@@ -25,7 +28,7 @@ function templates() {
 			})
 		)
 		.pipe( globals.$.rename({dirname: '.'}) )
-		.pipe( globals.gulp.dest( globals.config.paths.dist.path ) );
+		.pipe( globals.gulp.dest( dest ) );
 };
 
 globals.gulp.task('templates', templates);
