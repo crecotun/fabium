@@ -1,3 +1,6 @@
+### 2.8.2
+- removed `babel-preset-es2015-webpack` package
+
 ### 2.8.1
 - set a plopfile option for task `npm run add`
 

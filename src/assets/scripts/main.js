@@ -1,5 +1,5 @@
 import $ from 'jquery'
-// import './footer'
+import './footer'
 
 $(document).ready(() => {
 })

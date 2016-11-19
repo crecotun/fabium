@@ -1,5 +1,5 @@
 import $ from 'jquery'
 
-$('.footer').on('click', () => {
-	alert(123)
+$('.header').on('click', () => {
+	alert('123')
 })
