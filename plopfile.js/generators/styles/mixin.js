@@ -1,7 +1,7 @@
 var isntEmpty = require('../../utils/isnt_empty')
 
 module.exports = function(config) {
-	var mixinsReplace = "//---------- Append Here ----------//"
+	var mixinsReplace = "/*---------- Append Here ----------*/"
 	return {
 		description: 'Create a new mixin',
 		prompts: [

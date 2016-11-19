@@ -1,18 +1,23 @@
 var globals = require('../globals.js')
 
+var zipSrc_src = globals.getPath( globals.config.paths.src.all ),
+		zipSrc_dest = globals.getPath( globals.config.paths.archives.path ),
+		zipDist_src = globals.getPath( globals.config.paths.dist.all ),
+		zipDist_dest = globals.getPath( globals.config.paths.archives.path )
+
 function zipSrc() {
-	return globals.gulp.src([globals.config.paths.src.all])
+	return globals.gulp.src( zipSrc_src )
 		.pipe( globals.$.zip('project_src.zip') )
 		.pipe(
-			globals.gulp.dest( globals.config.paths.archives.path )
+			globals.gulp.dest( zipSrc_dest )
 		);
 }
 
 function zipDist() {
-	return globals.gulp.src([globals.config.paths.dist.all])
+	return globals.gulp.src( zipDist_src )
 		.pipe( globals.$.zip('project_dist.zip') )
 		.pipe(
-			globals.gulp.dest( globals.config.paths.archives.path )
+			globals.gulp.dest( zipDist_dest )
 		);
 }
 

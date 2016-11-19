@@ -22,7 +22,7 @@ module.exports = function(config) {
 			}
 		],
 		actions: function(data) {
-			var componentsReplace = "//----------  Components: End  ----------//"
+			var componentsReplace = "/*----------  Components: End  ----------*/"
 
 			var actions = [
 				{

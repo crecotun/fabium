@@ -3,83 +3,76 @@
 		"root": "./",
 
 		"src": {
-			"path": "./src",
-			"all": "./src/**",
+			"path": "src",
+			"all": "src/**",
 			"styles": {
-				"all": "./src/assets/styles/**/*.sss",
-				"main": "./src/assets/styles/main.sss",
-				"path": "./src/assets/styles"
-			},
-			"sprites": {
-				"images": {
-					"all": "./src/assets/images/sprite/*",
-					"path": "./src/assets/images/sprite"
-				},
-				"style": "./src/assets/styles/common"
+				"all": "src/assets/styles/**/*.sss",
+				"main": "src/assets/styles/main.sss",
+				"path": "src/assets/styles"
 			},
 			"scripts": {
-				"all": "./src/assets/scripts/**/*.js"
+				"all": "src/assets/scripts/**/*.js"
 			},
 			"images": {
-				"all": "./src/assets/images/**/*.*",
-				"path": "./src/assets/images"
+				"all": "src/assets/images/**/*.*",
+				"path": "src/assets/images"
 			},
 			"fonts": {
-				"all": "./src/assets/fonts/**/*.*",
-				"path": "./src/assets/fonts/"
+				"all": "src/assets/fonts/**/*.*",
+				"path": "src/assets/fonts/"
 			},
 			"templates": {
-				"all": "./src/templates/**/*.pug",
-				"path": "./src/templates",
+				"all": "src/templates/**/*.pug",
+				"path": "src/templates",
 				"blocks": {
-					"all": "./src/templates/blocks/**/*.pug",
-					"path": "./src/templates/blocks"
+					"all": "src/templates/blocks/**/*.pug",
+					"path": "src/templates/blocks"
 				},
 				"pages": {
-					"all": "./src/templates/pages/**/*.pug",
-					"path": "./src/templates/pages"
+					"all": "src/templates/pages/**/*.pug",
+					"path": "src/templates/pages"
 				}
 			}
 		},
 
 		"dist": {
-			"path": "./dist",
-			"all": "./dist/**",
+			"path": "dist",
+			"all": "dist/**",
 			"styles": {
-				"all": "./dist/assets/styles/**/*.css",
-				"path": "./dist/assets/styles",
+				"all": "dist/assets/styles/**/*.css",
+				"path": "dist/assets/styles",
 				"minified": {
-					"all": "./dist/assets/styles/**/*.min.css"
+					"all": "dist/assets/styles/**/*.min.css"
 				},
 				"rtl": {
-					"all": "./dist/assets/styles/**/*-rtl.css"
+					"all": "dist/assets/styles/**/*-rtl.css"
 				}
 			},
 			"scripts": {
-				"all": "./dist/assets/scripts/**/*.js",
-				"all_minified": "./dist/assets/scripts/**/*.min.js",
-				"path": "./dist/assets/scripts/"
+				"all": "dist/assets/scripts/**/*.js",
+				"all_minified": "dist/assets/scripts/**/*.min.js",
+				"path": "dist/assets/scripts/"
 			},
 			"images": {
-				"all": "./dist/assets/images/**/*.*",
-				"path": "./dist/assets/images"
+				"all": "dist/assets/images/**/*.*",
+				"path": "dist/assets/images"
 			},
 			"libs": {
-				"path": "./dist/assets/libs/"
+				"path": "dist/assets/libs/"
 			},
 			"templates": {
-				"all": "./dist/**/*.html"
+				"all": "dist/**/*.html"
 			},
 			"fonts": {
-				"path": "./dist/assets/fonts"
+				"path": "dist/assets/fonts"
 			}
 
 		},
 
 		"archives": {
-			"path": "./archives",
-			"dist": "./archives/project_dist.zip",
-			"src": "./archives/project_src.zip"
+			"path": "archives",
+			"dist": "archives/project_dist.zip",
+			"src": "archives/project_src.zip"
 		}
 	},
 

@@ -1,7 +1,9 @@
 var globals = require('../globals.js')
 
+var src = globals.getPath( globals.config.paths.dist.templates.all )
+
 function w3cHTML(cb) {
-	return globals.gulp.src(globals.config.paths.dist.templates.all)
+	return globals.gulp.src( src )
 		.pipe(
 			globals.$.plumber({
 				errorHandler: globals.consoleError
