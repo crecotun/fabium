@@ -34,7 +34,7 @@
     "gulp-plumber": "^1.0.1",
     "gulp-postcss": "^6.1.1",
     "gulp-pug": "^3.0.4",
-    "gulp-pug-inheritance": "^0.2.1",
+    "gulp-pug-inheritance": "^0.1.1",
     "gulp-rename": "^1.2.2",
     "gulp-rtlcss": "^1.0.0",
     "gulp-sass": "^2.3.2",
@@ -66,9 +66,9 @@
     "webpack-stream": "^3.2.0"
   },
   "scripts": {
-    "gulp": "./node_modules/.bin/gulp --gulpfile ./fabium/gulpfile.js/index.js",
-    "add": "./node_modules/.bin/plop --plopfile ./fabium/plopfile.js",
-    "start": "cd ./fabium && npm run gulp dev",
+    "gulp": "./node_modules/.bin/gulp",
+    "add": "./node_modules/.bin/plop --plopfile ./plopfile.js/index.js",
+    "start": "npm run gulp dev",
     "production": "NODE_ENV=production npm run gulp production",
     "deploy": "npm run gulp deploy",
     "validate": "npm run gulp validate",
