@@ -1,4 +1,4 @@
-### 2.9.0
+### 3.0.0
 - renamed folder gulpfile.js to fabium
 - moved plopfile.js into fabium folder and renamed to plop
 - renamed dist folder to public
