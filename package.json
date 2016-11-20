@@ -66,8 +66,8 @@
     "webpack-stream": "^3.2.0"
   },
   "scripts": {
-    "gulp": "./node_modules/.bin/gulp",
-    "add": "./node_modules/.bin/plop --plopfile ./plopfile.js/index.js",
+    "gulp": "./node_modules/.bin/gulp --gulpfile ./fabium",
+    "add": "./node_modules/.bin/plop --plopfile ./fabium/plop",
     "start": "npm run gulp dev",
     "production": "NODE_ENV=production npm run gulp production",
     "deploy": "npm run gulp deploy",
