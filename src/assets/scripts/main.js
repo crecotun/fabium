@@ -1,5 +1,12 @@
 import $ from 'jquery'
 import './footer'
 
-$(document).ready(() => {
+class What {
+	constructor() {
+		console.log('hey');
+	}
+}
+
+$(() => {
+	new What()
 })

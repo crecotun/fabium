@@ -10,12 +10,12 @@ module.exports = {
 
 	entry: {
 		main: [
-			path.resolve(__dirname, './src/assets/scripts/main')
+			path.resolve(__dirname, '../src/assets/scripts/main')
 		]
 	},
 
 	output: {
-		path: path.resolve(__dirname, './dist/assets/scripts'),
+		path: path.resolve(__dirname, '../dist/assets/scripts'),
 		publicPath: './assets/scripts',
 		filename: '[name].js'
 	},
