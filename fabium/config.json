@@ -38,35 +38,35 @@
 		},
 
 		"dist": {
-			"path": "dist",
-			"all": "dist/**",
+			"path": "public",
+			"all": "public/**",
 			"styles": {
-				"all": "dist/assets/styles/**/*.css",
-				"path": "dist/assets/styles",
+				"all": "public/assets/styles/**/*.css",
+				"path": "public/assets/styles",
 				"minified": {
-					"all": "dist/assets/styles/**/*.min.css"
+					"all": "public/assets/styles/**/*.min.css"
 				},
 				"rtl": {
-					"all": "dist/assets/styles/**/*-rtl.css"
+					"all": "public/assets/styles/**/*-rtl.css"
 				}
 			},
 			"scripts": {
-				"all": "dist/assets/scripts/**/*.js",
-				"all_minified": "dist/assets/scripts/**/*.min.js",
-				"path": "dist/assets/scripts/"
+				"all": "public/assets/scripts/**/*.js",
+				"all_minified": "public/assets/scripts/**/*.min.js",
+				"path": "public/assets/scripts/"
 			},
 			"images": {
-				"all": "dist/assets/images/**/*.*",
-				"path": "dist/assets/images"
+				"all": "public/assets/images/**/*.*",
+				"path": "public/assets/images"
 			},
 			"libs": {
-				"path": "dist/assets/libs/"
+				"path": "public/assets/libs/"
 			},
 			"templates": {
-				"all": "dist/**/*.html"
+				"all": "public/**/*.html"
 			},
 			"fonts": {
-				"path": "dist/assets/fonts"
+				"path": "public/assets/fonts"
 			}
 
 		},

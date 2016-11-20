@@ -1,6 +1,7 @@
 # Fabium #
 ######################
 dist/
+public/
 archives/
 ssh.json
 
