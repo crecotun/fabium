@@ -1,6 +1,6 @@
 var isntEmpty = require('../../utils/isnt_empty')
 var path = require('path')
-var getPath = require( path.resolve(process.env.PWD, 'gulpfile.js/utils/get_path.js') )
+var getPath = require( path.resolve(process.env.PWD, 'fabium/utils/get_path.js') )
 
 module.exports = function(config) {
 	var pageReplace = "//- Append Pages Here"

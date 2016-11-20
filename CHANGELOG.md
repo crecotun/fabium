@@ -1,3 +1,9 @@
+### 3.0.0
+- renamed folder gulpfile.js to fabium
+- moved plopfile.js into fabium folder and renamed to plop
+- renamed dist folder to public
+- webpack.config.js moved into fabium
+
 ### 2.8.2
 - removed `babel-preset-es2015-webpack` package
 

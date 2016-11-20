@@ -2,7 +2,7 @@ var globals = require('../globals.js'),
 		stream = require('webpack-stream'),
 		webpack = require('webpack'),
 		gulplog = require('gulplog'),
-		webpackConfig = require('../../webpack.config')
+		webpackConfig = require( globals.getPath( 'fabium/webpack.config' ) )
 
 var src = globals.getPath( globals.config.paths.src.scripts.all ),
 		dest = globals.getPath( globals.config.paths.dist.scripts.path )

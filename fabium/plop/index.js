@@ -1,4 +1,4 @@
-var config = require('../gulpfile.js/config.json')
+var config = require('../config.json')
 
 module.exports = function (plop) {
 
