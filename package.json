@@ -46,7 +46,7 @@
     "gulplog": "^1.0.0",
     "json-loader": "^0.5.4",
     "merge-stream": "^1.0.0",
-    "plop": "^1.6.0",
+    "plop": "^1.7.1",
     "postcss": "^5.2.2",
     "postcss-assets": "^4.1.0",
     "postcss-comment": "^1.0.3",

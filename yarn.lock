@@ -3731,7 +3731,17 @@ handlebars-layouts@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/handlebars-layouts/-/handlebars-layouts-1.1.0.tgz#2612be5aed8f20269737c7311da15c9c2d75fbbc"
 
-handlebars@^4.0.5, handlebars@~4.0.5:
+handlebars@^4.0.5:
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.0.6.tgz#2ce4484850537f9c97a8026d5399b935c4ed4ed7"
+  dependencies:
+    async "^1.4.0"
+    optimist "^0.6.1"
+    source-map "^0.4.4"
+  optionalDependencies:
+    uglify-js "^2.6"
+
+handlebars@~4.0.5:
   version "4.0.5"
   resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.0.5.tgz#92c6ed6bb164110c50d4d8d0fbddc70806c6f8e7"
   dependencies:
@@ -4036,8 +4046,8 @@ inquirer@^0.12.0:
     through "^2.3.6"
 
 inquirer@^1.2.0:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-1.2.2.tgz#f725c1316f0020e7f3d538c8c5ad0c2732c1c451"
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-1.2.3.tgz#4dec6f32f37ef7bb0b2ed3f1d1a5c3f545074918"
   dependencies:
     ansi-escapes "^1.1.0"
     chalk "^1.0.0"
@@ -5436,9 +5446,9 @@ node-libs-browser@^0.6.0:
     util "~0.10.3"
     vm-browserify "0.0.4"
 
-node-plop@0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/node-plop/-/node-plop-0.4.1.tgz#c4cf74f5565153f36bc3e61288a679edb604cdd0"
+node-plop@~0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/node-plop/-/node-plop-0.5.2.tgz#71ca4d594a5a30fa2f17b97d8992c33dcdd46cb0"
   dependencies:
     change-case "^2.3.1"
     co "^4.6.0"
@@ -5973,14 +5983,14 @@ pkg-resolve@^0.1.7:
     resolve "^1.1.7"
 
 plop:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/plop/-/plop-1.6.0.tgz#9c0b420285fe2a23fc9cca8f9b608d5a8613e60a"
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/plop/-/plop-1.7.1.tgz#7354814b1e07fdeb45f3aec8c27146c0bdd6c64d"
   dependencies:
     chalk "^1.1.3"
     interpret "^1.0.0"
     liftoff "^2.2.0"
     minimist "^1.2.0"
-    node-plop "0.4.1"
+    node-plop "~0.5.2"
     v8flags "^2.0.10"
 
 plur@^2.0.0, plur@^2.1.2:
