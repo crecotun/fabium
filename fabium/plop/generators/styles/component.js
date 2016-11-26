@@ -50,7 +50,7 @@ module.exports = function(config) {
 					path: getPath( config.paths.src.styles.main ),
 					pattern: componentsReplace,
 					template:
-						'// {{snakeCase name}}\n'+
+						'/* {{snakeCase name}} */\n'+
 						'@import "components/{{snakeCase name}}/{{snakeCase name}}.sss"\n'+
 						(data.responsive ? '@import "components/{{snakeCase name}}/{{snakeCase name}}-responsive.sss"\n' : '')+
 						'\n'+
