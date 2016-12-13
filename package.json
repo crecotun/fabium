@@ -42,7 +42,6 @@
     "gulp-util": "^3.0.6",
     "gulp-w3cjs": "^1.2.0",
     "gulp-zip": "^3.2.0",
-    "gulp.spritesmith": "^6.2.1",
     "gulplog": "^1.0.0",
     "json-loader": "^0.5.4",
     "merge-stream": "^1.0.0",
