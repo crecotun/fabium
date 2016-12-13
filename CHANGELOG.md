@@ -1,3 +1,6 @@
+### 3.1.0
+- added emitty package for speedup templates rendering
+
 ### 3.0.0
 - renamed folder gulpfile.js to fabium
 - moved plopfile.js into fabium folder and renamed to plop
