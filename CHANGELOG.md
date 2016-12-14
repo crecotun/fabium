@@ -1,3 +1,6 @@
+### 3.1.1
+- removed `makeVinylFile` option from emitty for templates
+
 ### 3.1.0
 - added emitty package for speedup templates rendering
 

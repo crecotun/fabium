@@ -1,6 +1,6 @@
 {
   "name": "fabium",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "front-end boilerplate for fast project start",
   "main": "fabium/index.js",
   "dependencies": {
