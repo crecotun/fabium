@@ -3,9 +3,7 @@ var globals = require('../globals.js')
 var src = globals.getPath( globals.config.paths.src.templates.all ),
 		dest = globals.getPath( globals.config.paths.dist.path )
 
-var emitty = require('emitty').setup(globals.config.paths.src.templates.path, 'pug', {
-	makeVinylFile: true
-})
+var emitty = require('emitty').setup(globals.config.paths.src.templates.path, 'pug')
 
 function templates() {
 	return globals.gulp.src( src )
