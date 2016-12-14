@@ -1,3 +1,6 @@
+### 3.1.2
+- added `url-loader` to dependencies
+
 ### 3.1.1
 - removed `makeVinylFile` option from emitty for templates
 
