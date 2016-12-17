@@ -11,5 +11,5 @@ module.exports = {
 	$: $,
 	path: path,
 	getPath: getPath,
-	PWD: process.env.PWD
+	PWD: process.cwd()
 }

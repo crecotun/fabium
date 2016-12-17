@@ -1,3 +1,6 @@
+### 3.1.3
+- process.env.PWD -> process.cwd()
+
 ### 3.1.2
 - added `url-loader` to dependencies
 
