@@ -1,3 +1,6 @@
+### 3.3
+- enabled localtunnel in browsersync
+
 ### 3.2
 - updated dependencies
 - changed snakeCase to kebabCase

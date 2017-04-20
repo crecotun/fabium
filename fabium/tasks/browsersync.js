@@ -22,7 +22,8 @@ function bSync(cb) {
 		server: {
 			baseDir: globals.getPath( globals.config.paths.dist.path )
 		},
-		port: PORT || 3000
+		port: PORT || 3000,
+		tunnel: true
 	}, cb);
 
 }

@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
 		HubRegistry = require('gulp-hub'),
-		hub = HubRegistry(['./tasks/**/*.js', '!./tasks/_**/*.js'])
+		hub = new HubRegistry(['./tasks/**/*.js', '!./tasks/_**/*.js'])
 
 gulp.registry(hub)
 
