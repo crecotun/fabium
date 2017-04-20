@@ -85,8 +85,8 @@
 		"styles": {
 			"component": {
 				"paths": {
-					"default": "src/assets/styles/components/{{snakeCase name}}/{{snakeCase name}}.sss",
-					"responsive": "src/assets/styles/components/{{snakeCase name}}/{{snakeCase name}}-responsive.sss"
+					"default": "src/assets/styles/components/{{kebabCase name}}/{{kebabCase name}}.sss",
+					"responsive": "src/assets/styles/components/{{kebabCase name}}/{{kebabCase name}}-responsive.sss"
 				},
 				"templates": {
 					"default": "fabium/plop/templates/styles/component.sss",
@@ -94,22 +94,22 @@
 				}
 			},
 			"mixin": {
-				"path": "src/assets/styles/mixins/{{snakeCase name}}.sss",
+				"path": "src/assets/styles/mixins/{{kebabCase name}}.sss",
 				"template": "fabium/plop/templates/styles/mixin.sss"
 			}
 		},
 
 		"templates": {
 			"component": {
-				"path": "src/templates/components/{{snakeCase name}}/{{snakeCase name}}.pug",
+				"path": "src/templates/components/{{kebabCase name}}/{{kebabCase name}}.pug",
 				"template": "fabium/plop/templates/templates/component.pug"
 			},
 			"page": {
-				"path": "src/templates/pages/{{snakeCase name}}.pug",
+				"path": "src/templates/pages/{{kebabCase name}}.pug",
 				"template": "fabium/plop/templates/templates/page.pug"
 			},
 			"layout": {
-				"path": "src/templates/layouts/{{snakeCase name}}.pug",
+				"path": "src/templates/layouts/{{kebabCase name}}.pug",
 				"template": "fabium/plop/templates/templates/layout.pug"
 			}
 		}

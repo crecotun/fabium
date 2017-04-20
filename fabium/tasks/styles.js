@@ -19,6 +19,7 @@ var postcssPlugins = [
 	require('postcss-hexrgba'), // rucksack
 	require('postcss-sass-color-functions'),
 	require('postcss-short'),
+	require('postcss-strip-inline-comments'),
 	require('autoprefixer')({
 		browsers: ['last 2 versions'],
 		cascade: false

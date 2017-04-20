@@ -25,7 +25,7 @@ module.exports = function(config) {
 				path: getPath( config.paths.src.styles.mixins ),
 				pattern: mixinsReplace,
 				template:
-					'@import "./{{snakeCase name}}.sss"\n'+
+					'@import "./{{kebabCase name}}.sss"\n'+
 					mixinsReplace
 			}
 		]

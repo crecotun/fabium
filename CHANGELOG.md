@@ -1,3 +1,7 @@
+### 3.2
+- updated dependencies
+- changed snakeCase to kebabCase
+
 ### 3.1.3
 - process.env.PWD -> process.cwd()
 

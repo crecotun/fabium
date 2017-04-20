@@ -25,7 +25,7 @@ module.exports = function(config) {
 				pattern: pageReplace,
 				path: getPath( config.paths.src.templates.pages.index ),
 				template:
-					"li: a(href='./{{snakeCase name}}.html') {{titleCase name}}\n"+
+					"li: a(href='./{{kebabCase name}}.html') {{titleCase name}}\n"+
 					"\t\t\t\t"+
 					pageReplace
 			}
