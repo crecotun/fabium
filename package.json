@@ -4,6 +4,7 @@
 	"description": "front-end boilerplate for fast project start",
 	"main": "fabium/index.js",
 	"dependencies": {
+		"gulp-sass": "^3.1.0",
 		"jquery": "^3.1.1"
 	},
 	"devDependencies": {
