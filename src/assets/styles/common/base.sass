@@ -1,0 +1,36 @@
+html,
+body
+	height: 100%
+
+body
+	font-family: Arial, sans-serif
+	font-size: 14px
+	line-height: 1.4
+
+body,
+input,
+button,
+textarea
+	font-family: Arial, sans-serif
+
+input,
+button,
+textarea
+	@include resetInput
+
+button
+	cursor: pointer
+	&::-moz-focus-inner
+		border: 0
+		padding: 0
+
+a
+	text-decoration: none
+
+em,
+i
+	font-style: italic
+
+b,
+strong
+	font-weight: bold
