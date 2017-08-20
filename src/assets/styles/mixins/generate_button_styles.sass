@@ -1,0 +1,20 @@
+@mixin generateButtonStyles ($className, $color, $textColorHover: #fff)
+	&.-#{$className}
+		&
+			&
+				background-color: $color
+				color: #fff
+
+			&:hover
+				background-color: darken($color, 10%)
+
+		&.-bordered
+			&
+				background-color: transparent
+				color: $color
+				border-color: $color
+
+			&:hover
+				background-color: darken($color, 10%)
+				border-color: darken($color, 10%)
+				color: #fff
