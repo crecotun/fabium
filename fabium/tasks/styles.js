@@ -1,6 +1,4 @@
 var globals = require('../globals.js'),
-		sugarss = require('sugarss'),
-		syntax = require('postcss-scss'),
 		stylelint = require('stylelint')
 
 var postcssPlugins = [
@@ -11,6 +9,8 @@ var postcssPlugins = [
 	}),
 	require('postcss-svgo'),
 	require('postcss-short'),
+	require('postcss-custom-media'),
+	require('postcss-media-minmax'),
 	require('autoprefixer')({
 		browsers: ['last 2 versions'],
 		cascade: false

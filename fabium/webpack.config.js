@@ -27,7 +27,7 @@ module.exports = {
 		ignored: /node_modules/
 	},
 
-	devtool: NODE_ENV == 'development' ? '#eval-source-map' : null,
+	devtool: NODE_ENV == 'development' ? '#eval-source-map' : false,
 
 	resolve: {
 		modules: ['node_modules'],
