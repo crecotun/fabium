@@ -1,14 +1,14 @@
 {
-	"rules": {
-		"selector-no-id": true,
-		"selector-pseudo-element-case": "lower",
+  "rules": {
+    "selector-max-id": 0,
+    "selector-pseudo-element-case": "lower",
 
-		"indentation": "tab",
-		"max-empty-lines": 2,
-		"no-descending-specificity": true,
-		"no-empty-source": true,
-		"no-eol-whitespace": true,
-		"no-extra-semicolons": true,
-		"no-invalid-double-slash-comments": true
-	}
+    "indentation": "tab",
+    "max-empty-lines": 2,
+    "no-descending-specificity": true,
+    "no-empty-source": true,
+    "no-eol-whitespace": true,
+    "no-extra-semicolons": true,
+    "no-invalid-double-slash-comments": true
+  }
 }

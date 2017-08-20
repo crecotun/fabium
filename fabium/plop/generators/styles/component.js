@@ -51,8 +51,8 @@ module.exports = function(config) {
 					pattern: componentsReplace,
 					template:
 						'/* {{kebabCase name}} */\n'+
-						'@import "components/{{kebabCase name}}/{{kebabCase name}}.sss"\n'+
-						(data.responsive ? '@import "components/{{kebabCase name}}/{{kebabCase name}}-responsive.sss"\n' : '')+
+						'@import "components/{{kebabCase name}}/{{kebabCase name}}.sass"\n'+
+						(data.responsive ? '@import "components/{{kebabCase name}}/{{kebabCase name}}-responsive.sass"\n' : '')+
 						'\n'+
 						componentsReplace
 				}

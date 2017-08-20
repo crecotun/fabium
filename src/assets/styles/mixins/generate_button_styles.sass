@@ -1,5 +1,5 @@
-@define-mixin generateButtonStyles $className, $color, $textColorHover = #fff
-	&.-$className
+@mixin generateButtonStyles ($className, $color, $textColorHover: #fff)
+	&.-#{$className}
 		&
 			&
 				background-color: $color

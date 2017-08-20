@@ -1,7 +1,11 @@
-### 3.3
+### 4.0.0
+- Switched from SugarSS to Sass
+- removed and updated some dependencies
+
+### 3.3.0
 - enabled localtunnel in browsersync
 
-### 3.2
+### 3.2.0
 - updated dependencies
 - changed snakeCase to kebabCase
 

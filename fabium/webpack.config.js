@@ -27,53 +27,46 @@ module.exports = {
 		ignored: /node_modules/
 	},
 
-	devtool: NODE_ENV == 'development' ? '#eval-source-map' : null,
+	devtool: NODE_ENV == 'development' ? '#eval-source-map' : false,
 
 	resolve: {
-		alias: {},
-		modulesDirectories: ['node_modules'],
-		extensions: ['', '.js']
-	},
-
-	resolveLoader: {
-		modulesDirectories: ['node_modules'],
-		extensions: ['', '.js']
+		modules: ['node_modules'],
+		enforceExtension: false
 	},
 
 	module: {
-		preLoaders: [
+		rules: [
 			{
 				test: /\.js$/,
 				loader: 'eslint-loader',
 				exclude: /(node_modules|bower_components)/,
-			}
-		],
-
-		loaders: [
+				enforce: 'pre'
+			},
 			{
 				test: /\.css?$/,
 				include: /(node_modules|bower_components)/,
-				loader: 'style!css',
+				use: ['style-loader', 'css-loader'],
 			},
 			{
 				test: /\.js?$/,
 				exclude: /(node_modules|bower_components|formValidation)/,
-				loader: 'babel'
-			},
-			{
-				test: /\.json$/,
-				exclude: /(node_modules|bower_components)/,
-				loader: 'json'
+				use: ['babel-loader']
 			},
 			{
 				test: /\.(gif|png|jpg|svg|woff|ttf|eot|woff2)$/,
-				loader: 'url?limit=10000&name=[path][name].[ext]'
+				use: {
+					loader: 'url-loader',
+					options: {
+						limit: 10000,
+						name: '[path][name].[ext]'
+					}
+				}
 			},
 		]
 	},
 
 	plugins: [
-		new webpack.NoErrorsPlugin(),
+		new webpack.NoEmitOnErrorsPlugin(),
 		new webpack.ProvidePlugin({
 			$: 'jquery/dist/jquery.min',
 			jQuery: 'jquery/dist/jquery.min',

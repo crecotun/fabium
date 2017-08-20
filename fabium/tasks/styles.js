@@ -1,25 +1,16 @@
 var globals = require('../globals.js'),
-		sugarss = require('sugarss'),
-		syntax = require('postcss-scss'),
 		stylelint = require('stylelint')
 
 var postcssPlugins = [
-	require('postcss-import')({
-		plugins: [
-			stylelint
-		]
-	}),
-	require('precss'),
 	require('postcss-inline-svg'),
 	require('postcss-assets')({
 		basePath: './assets/',
 		loadPaths: ['images/', 'fonts/']
 	}),
 	require('postcss-svgo'),
-	require('postcss-hexrgba'), // rucksack
-	require('postcss-sass-color-functions'),
 	require('postcss-short'),
-	require('postcss-strip-inline-comments'),
+	require('postcss-custom-media'),
+	require('postcss-media-minmax'),
 	require('autoprefixer')({
 		browsers: ['last 2 versions'],
 		cascade: false
@@ -38,10 +29,12 @@ function styles() {
 				this.emit('end');
 			})
 		)
-		.pipe( globals.$.postcss(postcssPlugins, {
-			syntax: syntax,
-			parser: sugarss
-		 } ) )
+		.pipe(
+			globals.$.sass({
+				outputStyle: 'expanded'
+			})
+		)
+		.pipe( globals.$.postcss(postcssPlugins) )
 		.pipe(
 			globals.$.rename(function(path){
 				path.extname = '.css'

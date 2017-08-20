@@ -6,9 +6,9 @@
 			"path": "src",
 			"all": "src/**",
 			"styles": {
-				"all": "src/assets/styles/**/*.sss",
-				"main": "src/assets/styles/main.sss",
-				"mixins": "src/assets/styles/mixins/index.sss",
+				"all": "src/assets/styles/**/*.sass",
+				"main": "src/assets/styles/main.sass",
+				"mixins": "src/assets/styles/mixins/index.sass",
 				"path": "src/assets/styles"
 			},
 			"scripts": {
@@ -85,17 +85,17 @@
 		"styles": {
 			"component": {
 				"paths": {
-					"default": "src/assets/styles/components/{{kebabCase name}}/{{kebabCase name}}.sss",
-					"responsive": "src/assets/styles/components/{{kebabCase name}}/{{kebabCase name}}-responsive.sss"
+					"default": "src/assets/styles/components/{{kebabCase name}}/{{kebabCase name}}.sass",
+					"responsive": "src/assets/styles/components/{{kebabCase name}}/{{kebabCase name}}-responsive.sass"
 				},
 				"templates": {
-					"default": "fabium/plop/templates/styles/component.sss",
-					"responsive": "fabium/plop/templates/styles/component-responsive.sss"
+					"default": "fabium/plop/templates/styles/component.sass",
+					"responsive": "fabium/plop/templates/styles/component-responsive.sass"
 				}
 			},
 			"mixin": {
-				"path": "src/assets/styles/mixins/{{kebabCase name}}.sss",
-				"template": "fabium/plop/templates/styles/mixin.sss"
+				"path": "src/assets/styles/mixins/{{kebabCase name}}.sass",
+				"template": "fabium/plop/templates/styles/mixin.sass"
 			}
 		},
 
