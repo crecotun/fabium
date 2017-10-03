@@ -2,25 +2,25 @@ Front-end automated boilerplate
 ====================
 
 ## How to use
-1. install deps `npm i`
-2. all tasks should be started via npm. e.g. `npm run gulp`, `npm run gulp dev`.
+1. Install deps `npm i`
+2. Run `npm run prepare`
+3. all tasks should be started via npm. e.g. `npm run gulp`, `npm run gulp dev`.
 	It looks a bit ugly, but this is the only way to work with 4 ver of gulp until it'll be finally released.
 
 ## So, what do we have under the hood for now?
 - pug -> html
-- postcss -> css
+- sass -> postcss -> css
 - browsersync
 - autoprefixer
-- bower
 - es2015 compilation
 - watch 'n compile
 - generator for styles and templates
 
-Автоматизированный шаблон для быстрого старта front-end разработки
+Boilerplate for UI development
 
 ## Навигация
-* [Для чего все это?](#Для-чего-все-это)
-* [Установка](#Установка)
+* [What is this?](#What is this)
+* [Installation](#Installation)
 * [Что в мешке?](#Что-в-мешке)
     * [Сборщик проекта](#Сборщик-проекта)
     * [Автоматизированные задачи](#Автоматизированные-задачи)
@@ -30,16 +30,15 @@ Front-end automated boilerplate
     - [Группы задач](#Группы-задач)
 * [TODO](#TODO)
 
-## Для чего все это?
-Этот шаблон, в первую очередь, предназначен для автоматизации рутинных задач в процессе верстки.
+## What is this?
+This is a boilerplate for reducing amount of routine tasks in UI development.
+The boilerplate is built based on my experience and needs, so I don't guarantee it will be useful for you as is. You can use it as an example and modify it or build your own.
 
-Шаблон собран на основе моего опыта и потребностей, поэтому я не обещаю, что он может быть полезен вам в первоначальном виде, но его можно использовать как наглядный пример и дорабатывать под свои нужды.
-
-## Установка
-- Скачать и установить [node.js](https://nodejs.org/)
-- Склонировать этот проект и удалить `.git`, чтобы привязать свой гит репозиторий
-- установить все зависимости `npm i`
-- сохранить файл `gulpfile.js/tasks/ssh.json.example` как `ssh.json` со своими данными
+## Intallation
+- Download and install [node.js](https://nodejs.org/)
+- Clone this repository and remove `.git` in order to connect your own git repository later
+- Install all dependencies `npm i`
+- Run `npm run prepare`
 
 ## Что в мешке?
 
@@ -99,14 +98,14 @@ Front-end automated boilerplate
 `Gulp` в процессе работы берет файл из 1 папки, выполняет с ним необходимые операции и сохраняет в другой папке. Для удобства, все пути к файлам я вынес в переменные и храню их в файле `config.json`.
 
 ### Генератор файлов
-В процессе работы много времени уходит на создание файлов для компонентов и страниц. Я решил это дело автоматизировать.  
+В процессе работы много времени уходит на создание файлов для компонентов и страниц. Я решил это дело автоматизировать.
 Теперь одной командой `npm run add` можно создать:
 - стиль для компонента
 - миксин
 - шаблон для компонента
 - и страницу
 
-При создании стиля для компонента, можно создать файл для респонсив версии, и все это автоматически подключится в main.sass  
+При создании стиля для компонента, можно создать файл для респонсив версии, и все это автоматически подключится в main.sass
 При создании новой страницы, она добавится в список всех страниц в файле index.pug
 
 ### Задачи
