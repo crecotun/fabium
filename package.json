@@ -62,7 +62,7 @@
 	},
 	"scripts": {
 		"gulp": "./node_modules/.bin/gulp --gulpfile ./fabium",
-		"add": "./node_modules/.bin/plop --plopfile ./fabium/plop",
+		"add": "./node_modules/.bin/plop --plopfile ./fabium/plop/index.js",
 		"start": "npm run gulp dev",
 		"production": "NODE_ENV=production npm run gulp production",
 		"deploy": "npm run gulp deploy",
