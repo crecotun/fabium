@@ -1,3 +1,7 @@
 import $ from 'jquery'
 
-$(document).ready(() => {})
+import header from './components/header.js'
+
+$(document).ready(() => {
+	header()
+})

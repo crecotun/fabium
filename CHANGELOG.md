@@ -1,3 +1,9 @@
+### 4.0.1
+- updated webpack to 3.6.0
+- updated plop to 1.9.0
+- intoduced `prepare` npm-script which basically create ssh.json from .example
+- added `postcss-flexbugs-fixes`
+
 ### 4.0.0
 - Switched from SugarSS to Sass
 - removed and updated some dependencies
