@@ -1,6 +1,6 @@
 {
 	"name": "fabium",
-	"version": "4.0.1",
+	"version": "4.0.2",
 	"description": "front-end boilerplate for fast project start",
 	"main": "fabium/index.js",
 	"dependencies": {
@@ -57,7 +57,7 @@
 		"style-loader": "^0.13.1",
 		"stylelint": "^7.5.0",
 		"url-loader": "^0.5.7",
-		"webpack": "^3.6.0",
+		"webpack": "^3.8.1",
 		"webpack-stream": "^4.0.0"
 	},
 	"scripts": {

@@ -1,3 +1,6 @@
+### 4.0.2
+- updated webpack to 3.8.1
+
 ### 4.0.1
 - updated webpack to 3.6.0
 - updated plop to 1.9.0
