@@ -11,6 +11,7 @@ var postcssPlugins = [
 	require('postcss-short'),
 	require('postcss-custom-media'),
 	require('postcss-media-minmax'),
+	require('postcss-flexbugs-fixes'),
 	require('autoprefixer')({
 		browsers: ['last 2 versions'],
 		cascade: false

@@ -1,6 +1,6 @@
 {
 	"name": "fabium",
-	"version": "3.3.1",
+	"version": "4.0.2",
 	"description": "front-end boilerplate for fast project start",
 	"main": "fabium/index.js",
 	"dependencies": {
@@ -43,30 +43,33 @@
 		"gulp-zip": "^4.0.0",
 		"gulplog": "^1.0.0",
 		"json-loader": "^0.5.4",
-		"plop": "^1.8.0",
+		"plop": "^1.9.0",
 		"postcss": "^5.2.2",
 		"postcss-assets": "^4.2.0",
 		"postcss-custom-media": "^6.0.0",
+		"postcss-flexbugs-fixes": "^3.2.0",
 		"postcss-inline-svg": "^2.1.2",
 		"postcss-media-minmax": "^3.0.0",
 		"postcss-short": "^3.0.3",
 		"postcss-svgo": "^2.1.5",
 		"pug": "^2.0.0-beta11",
+		"shx": "^0.2.2",
 		"style-loader": "^0.13.1",
 		"stylelint": "^7.5.0",
 		"url-loader": "^0.5.7",
-		"webpack": "^3.5.5",
+		"webpack": "^3.8.1",
 		"webpack-stream": "^4.0.0"
 	},
 	"scripts": {
 		"gulp": "./node_modules/.bin/gulp --gulpfile ./fabium",
-		"add": "./node_modules/.bin/plop --plopfile ./fabium/plop",
+		"add": "./node_modules/.bin/plop --plopfile ./fabium/plop/index.js",
 		"start": "npm run gulp dev",
 		"production": "NODE_ENV=production npm run gulp production",
 		"deploy": "npm run gulp deploy",
 		"validate": "npm run gulp validate",
 		"minify": "npm run gulp minify",
-		"archive": "npm run gulp archive"
+		"archive": "npm run gulp archive",
+		"prepare": "shx cp ./fabium/tasks/ssh/ssh.json.example ./fabium/tasks/ssh/ssh.json"
 	},
 	"repository": {
 		"type": "git",
