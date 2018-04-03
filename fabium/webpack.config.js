@@ -4,8 +4,11 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 const webpack = require('webpack');
 const path = require('path');
 // const combineLoaders = require('webpack-combine-loaders');
+const isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = {
+	mode: isProduction ? 'production' : 'development',
+
 	context: __dirname,
 
 	entry: {
@@ -20,14 +23,14 @@ module.exports = {
 		filename: '[name].js'
 	},
 
-	watch: NODE_ENV == 'development',
+	watch: !isProduction,
 
 	watchOptions: {
 		aggregateTimeout: 100,
 		ignored: /node_modules/
 	},
 
-	devtool: NODE_ENV == 'development' ? '#eval-source-map' : false,
+	devtool: !isProduction ? '#eval-source-map' : false,
 
 	resolve: {
 		modules: ['node_modules'],
@@ -65,6 +68,18 @@ module.exports = {
 		]
 	},
 
+	optimization: {
+		splitChunks: {
+			cacheGroups: {
+				commons: {
+					test: /[\\/]node_modules[\\/]/,
+					name: 'common',
+					chunks: 'all'
+				}
+			}
+		}
+	},
+
 	plugins: [
 		new webpack.NoEmitOnErrorsPlugin(),
 		new webpack.ProvidePlugin({
@@ -76,8 +91,7 @@ module.exports = {
 			'process.env': {
 				NODE_ENV: JSON.stringify(NODE_ENV)
 			}
-		}),
-		new webpack.optimize.CommonsChunkPlugin({ name: "common" })
+		})
 	]
 
 }
