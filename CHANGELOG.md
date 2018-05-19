@@ -1,3 +1,7 @@
+### 4.1.0
+- webpack updated to 4 vers
+- updated all dev deps as well
+
 ### 4.0.2
 - updated webpack to 3.8.1
 
