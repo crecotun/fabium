@@ -25,4 +25,5 @@
   }]
   "no-mixed-spaces-and-tabs": 2
   "no-unused-vars": [0, { "vars": "all", "args": "after-used"}]
+  "no-undef": 0
   "jsx-quotes": [2, "prefer-double"]
