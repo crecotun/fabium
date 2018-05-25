@@ -3,8 +3,9 @@
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const webpack = require('webpack');
 const path = require('path');
-// const combineLoaders = require('webpack-combine-loaders');
+const generateEntryPoints = require('./utils/generateEntryPoints')
 const isProduction = process.env.NODE_ENV === 'production'
+const entryPoints = generateEntryPoints(path.resolve(__dirname, '../src/assets/scripts/pages'))
 
 module.exports = {
 	mode: isProduction ? 'production' : 'development',
@@ -12,10 +13,7 @@ module.exports = {
 	context: __dirname,
 
 	entry: {
-		main: [
-			'babel-polyfill',
-			path.resolve(__dirname, '../src/assets/scripts/main')
-		]
+		...entryPoints
 	},
 
 	output: {
