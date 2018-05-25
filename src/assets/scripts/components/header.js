@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import 'vendor/isInViewport'
 
 export default () => {
 	const $component = $('.header')
@@ -6,9 +7,5 @@ export default () => {
 	if (!$component.length) {
 		return null
 	}
-
-	Promise.all(['1']).then(() => {
-		alert(1212)
-	})
 }
 

@@ -32,7 +32,10 @@ module.exports = {
 	devtool: !isProduction ? '#eval-source-map' : false,
 
 	resolve: {
-		modules: ['node_modules'],
+		modules: [
+			'node_modules',
+			'scripts'
+		],
 		enforceExtension: false
 	},
 

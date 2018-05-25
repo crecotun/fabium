@@ -1,3 +1,6 @@
+### 4.2.0
+- Now we can have 1 js file per page. Files are dynamically converted to entry points in webpack config.
+
 ### 4.1.0
 - webpack updated to 4 vers
 - updated all dev deps as well
