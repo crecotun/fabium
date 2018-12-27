@@ -1,6 +1,6 @@
 {
 	"name": "fabium",
-	"version": "4.2.0",
+	"version": "4.2.1",
 	"description": "front-end boilerplate for fast project start",
 	"main": "fabium/index.js",
 	"dependencies": {
@@ -15,13 +15,13 @@
 		"babel-polyfill": "^6.26.0",
 		"babel-preset-env": "^1.7.0",
 		"babel-preset-stage-0": "^6.24.1",
-		"browser-sync": "^2.24.4",
+		"browser-sync": "^2.24.5",
 		"css-loader": "^0.28.11",
 		"emitty": "^1.4.0",
 		"eslint": "^4.19.1",
 		"eslint-loader": "^2.0.0",
 		"file-loader": "^1.1.11",
-		"gulp": "github:gulpjs/gulp#4.0",
+		"gulp": "^4.0.0",
 		"gulp-babel": "^7.0.1",
 		"gulp-csso": "^3.0.1",
 		"gulp-filter": "^5.1.0",
@@ -55,9 +55,9 @@
 		"pug": "^2.0.3",
 		"shx": "^0.2.2",
 		"style-loader": "^0.21.0",
-		"stylelint": "^9.2.1",
+		"stylelint": "^9.3.0",
 		"url-loader": "^1.0.1",
-		"webpack": "^4.8.3",
+		"webpack": "^4.15.1",
 		"webpack-stream": "^4.0.3"
 	},
 	"scripts": {

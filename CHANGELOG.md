@@ -1,3 +1,7 @@
+### 4.2.1
+- Update gulp to ver 4
+- change emmit settings to render only changed views
+
 ### 4.2.0
 - Now we can have 1 js file per page. Files are dynamically converted to entry points in webpack config.
 
