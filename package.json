@@ -1,12 +1,14 @@
 {
 	"name": "fabium",
-	"version": "4.2.1",
+	"version": "4.3.0",
 	"description": "front-end boilerplate for fast project start",
 	"main": "fabium/index.js",
 	"dependencies": {
 		"jquery": "^3.3.1"
 	},
 	"devDependencies": {
+		"@emitty/core": "^2.0.1",
+		"@emitty/language-pug": "^2.0.1",
 		"autoprefixer": "^8.5.0",
 		"babel-core": "^6.26.3",
 		"babel-eslint": "^8.2.3",
@@ -21,7 +23,7 @@
 		"eslint": "^4.19.1",
 		"eslint-loader": "^2.0.0",
 		"file-loader": "^1.1.11",
-		"gulp": "^4.0.0",
+		"gulp": "4.0.2",
 		"gulp-babel": "^7.0.1",
 		"gulp-csso": "^3.0.1",
 		"gulp-filter": "^5.1.0",
@@ -32,10 +34,10 @@
 		"gulp-newer": "^1.4.0",
 		"gulp-plumber": "^1.2.0",
 		"gulp-postcss": "^7.0.1",
-		"gulp-pug": "^4.0.1",
+		"gulp-pug": "^5.0.0",
 		"gulp-rename": "^1.2.3",
 		"gulp-rtlcss": "^1.2.0",
-		"gulp-sass": "^4.0.1",
+		"gulp-sass": "^5.0.0",
 		"gulp-ssh": "^0.7.0",
 		"gulp-uglify": "^3.0.0",
 		"gulp-util": "^3.0.8",
@@ -53,23 +55,25 @@
 		"postcss-short": "^4.1.0",
 		"postcss-svgo": "^2.1.6",
 		"pug": "^2.0.3",
-		"shx": "^0.2.2",
+		"sass": "^1.43.5",
+		"shx": "0.3.3",
 		"style-loader": "^0.21.0",
 		"stylelint": "^9.3.0",
+		"through2": "^4.0.2",
 		"url-loader": "^1.0.1",
 		"webpack": "^4.15.1",
 		"webpack-stream": "^4.0.3"
 	},
 	"scripts": {
-		"gulp": "./node_modules/.bin/gulp --gulpfile ./fabium",
-		"add": "./node_modules/.bin/plop --plopfile ./fabium/plop/index.js",
+		"gulp": "gulp --gulpfile ./fabium",
+		"add": "plop --plopfile ./fabium/plop/index.js",
 		"start": "npm run gulp dev",
 		"production": "NODE_ENV=production npm run gulp production",
 		"deploy": "npm run gulp deploy",
 		"validate": "npm run gulp validate",
 		"minify": "npm run gulp minify",
 		"archive": "npm run gulp archive",
-		"prepare": "shx cp ./fabium/tasks/ssh/ssh.json.example ./fabium/tasks/ssh/ssh.json"
+		"init": "shx cp ./fabium/tasks/ssh/ssh.json.example ./fabium/tasks/ssh/ssh.json"
 	},
 	"repository": {
 		"type": "git",

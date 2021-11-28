@@ -1,3 +1,5 @@
+const sass = require('gulp-sass')(require('sass'))
+
 var globals = require('../globals.js'),
 		stylelint = require('stylelint')
 
@@ -16,7 +18,7 @@ var postcssPlugins = [
 		browsers: ['last 2 versions'],
 		cascade: false
 	}),
-	require("postcss-reporter")({ clearMessages: true })
+	require('postcss-reporter')({ clearMessages: true })
 ];
 
 var src = globals.getPath( globals.config.paths.src.styles.main ),
@@ -31,7 +33,7 @@ function styles() {
 			})
 		)
 		.pipe(
-			globals.$.sass({
+			sass({
 				outputStyle: 'expanded'
 			})
 		)
@@ -42,7 +44,7 @@ function styles() {
 			})
 		)
 		.pipe( globals.gulp.dest( dest ) );
-};
+}
 
 globals.gulp.task('styles', styles);
 

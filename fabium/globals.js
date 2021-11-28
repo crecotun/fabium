@@ -1,8 +1,8 @@
-var gulp = require('gulp'),
-		config = require('./config.json'),
-		consoleError = require('./utils/console_error'),
-		getPath = require('./utils/get_path')
-		$ = require('gulp-load-plugins')()
+const gulp = require('gulp')
+const config = require('./config.json')
+const consoleError = require('./utils/console_error')
+const getPath = require('./utils/get_path')
+const $ = require('gulp-load-plugins')()
 
 module.exports = {
 	gulp: gulp,
@@ -11,5 +11,5 @@ module.exports = {
 	$: $,
 	path: path,
 	getPath: getPath,
-	PWD: process.cwd()
+	PWD: process.cwd(),
 }
