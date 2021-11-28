@@ -45,7 +45,7 @@
 		"gulp-zip": "^4.1.0",
 		"gulplog": "^1.0.0",
 		"json-loader": "^0.5.7",
-		"plop": "^2.0.0",
+		"plop": "3.0.0",
 		"postcss": "^6.0.22",
 		"postcss-assets": "^5.0.0",
 		"postcss-custom-media": "^6.0.0",
@@ -66,7 +66,7 @@
 	},
 	"scripts": {
 		"gulp": "gulp --gulpfile ./fabium",
-		"add": "plop --plopfile ./fabium/plop/index.js",
+		"addFile": "plop --plopfile ./fabium/plop/index.js",
 		"start": "npm run gulp dev",
 		"production": "NODE_ENV=production npm run gulp production",
 		"deploy": "npm run gulp deploy",
