@@ -5,7 +5,7 @@ var gulp = require('gulp'),
 gulp.registry(hub)
 
 gulp.task('default',
-	gulp.series('images', 'styles', 'scripts', 'templates')
+	gulp.series('images', 'styles', 'scripts', 'templates', 'fonts')
 );
 
 gulp.task('dev',
