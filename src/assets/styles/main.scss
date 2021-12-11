@@ -1,0 +1,26 @@
+//@import "mixins/index.scss"
+
+/*---------- Common: Start ----------*/
+
+@import "common/reset.scss";
+//@import "common/viewports.scss";
+//@import "common/variables.scss";
+@import "common/base.scss";
+
+/*----------  Common: End  ----------*/
+/*---------- Vendor: Start ----------*/
+
+@import "vendor/bootstrap-grid";
+@import "vendor/fonts";
+
+/*----------  Vendor: End  ----------*/
+
+
+/*---------- Components: Start ----------*/
+
+
+/* layout */
+@import "components/layout/layout.scss";
+@import "components/layout/layout-responsive.scss";
+
+/*----------  Components: End  ----------*/
