@@ -1,3 +1,9 @@
+### 4.4.0
+
+- Sass -> SCSS
+- enable fonts
+- add vendor example
+
 ### 4.3.0
 
 - Update gulp to 4.0.2
